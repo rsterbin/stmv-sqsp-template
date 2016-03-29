@@ -15,7 +15,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #header {
-    background: url(../images/arch.jpg) no-repeat center 42%;
+    background: url(/assets/arch.jpg) no-repeat center 42%;
     background-size: cover;
     text-align: center;
 }
@@ -51,7 +51,7 @@ h1,h2,h3,h4,h5,h6 {
 
 #header #nav,
 #header #nav .is-dropdown-submenu {
-    background: transparent url(../images/nav_bg_1x1.png) repeat;
+    background: transparent url(/assets/nav_bg_1x1.png) repeat;
 }
 
 #off_canvas_left {
@@ -59,7 +59,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #off_canvas_left .accordion {
-    background: transparent url(../images/nav_bg_1x1.png) repeat;
+    background: transparent url(/assets/nav_bg_1x1.png) repeat;
 }
 
 #header #nav {
@@ -158,7 +158,7 @@ body.default-interior #main {
 #main .fill-item {
     width: 100%;
     height: 500px;
-    background: url(../images/blank.jpg) no-repeat center top;
+    background: url(/assets/blank.jpg) no-repeat center top;
     background-size: cover;
 }
 
@@ -215,7 +215,7 @@ body.default-interior #main {
 
 
 #home-bottom {
-    background: #fff7d8 url("../images/bottom-box-bg.jpg") no-repeat scroll right bottom;
+    background: #fff7d8 url(/assets/bottom-box-bg.jpg) no-repeat scroll right bottom;
 }
 
 #home-services {
