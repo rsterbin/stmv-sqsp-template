@@ -6,17 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="Saint Mary's was founded in 1868 to be the Episcopal parish church for the new residential neighborhood, then called Longacre Square, here in midtown Manhattan. Our doors have been open daily for welcome and worship since December 8, 1870. All are welcome. Our members and friends now live both near and far from Times Square. We invite you to join us.">
-        <meta property="og:site_name" content="Squarespace"/>
-        <meta property="og:title" content="Build a Website"/>
-        <meta property="og:url" content="http://www.squarespace.com/"/>
-        <meta property="og:type" content="website"/>
-        <meta itemprop="name" content="Build a Website"/>
-        <meta itemprop="url" content="http://www.squarespace.com/"/>
-        <meta name="twitter:title" content="Build a Website"/>
-        <meta name="twitter:url" content="http://www.squarespace.com/"/>
-        <meta name="twitter:card" content="summary"/>
 
-        <link rel="icon" href="inc/site/images/favicon.ico" type="image/x-icon" />
+        {squarespace-headers}
+        <squarespace:script src="site.js" combo="false" />
+
+        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css" />
         <link rel="stylesheet" href="inc/owl-carousel/owl.carousel.css" />
         <link rel="stylesheet" href="inc/font-awesome-4.5.0/css/font-awesome.min.css" />
