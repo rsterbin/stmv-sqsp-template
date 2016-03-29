@@ -1,0 +1,435 @@
+/**
+ * Saint Mary the Virgin
+ *
+ * Main styles for the site
+ */
+
+body {
+    font-family: Palatino, Georgia, serif;
+    background: #f4f1e1;
+    color: #090a0c;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Palatino, Georgia, serif;
+}
+
+#header {
+    background: url(../images/arch.jpg) no-repeat center 42%;
+    background-size: cover;
+    text-align: center;
+}
+
+@media screen and (max-width: 39.9375em) {
+    #header {
+        background-position: center 12%;
+    }
+}
+
+#header #titlebar {
+    color: #fff;
+    padding: 1em 0;
+}
+
+#header #titlebar h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 0.125em 0.125em 0.25em #000;
+}
+
+#header #titlebar h2 {
+    font-size: 1.875em;
+    text-shadow: 0.1em 0.1em 0.125em #000;
+}
+
+#header .toggle-menu {
+    text-align: left;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+#header #nav,
+#header #nav .is-dropdown-submenu {
+    background: transparent url(../images/nav_bg_1x1.png) repeat;
+}
+
+#off_canvas_left {
+    background: #ccc;
+}
+
+#off_canvas_left .accordion {
+    background: transparent url(../images/nav_bg_1x1.png) repeat;
+}
+
+#header #nav {
+    padding: 1em 0;
+    border-top: 0.125em solid #d1c1a9;
+    border-bottom: 0.125em solid #d1c1a9;
+}
+
+#header #nav ul.menu li a,
+#off_canvas_left ul.menu li a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#header #nav .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after,
+#off_canvas_left .accordion.menu > li.is-accordion-submenu-parent > a::after {
+    border-color: #fff transparent transparent;
+}
+
+#header #nav ul.menu li.is-submenu-item a,
+#off_canvas_left ul.menu li.is-submenu-item a {
+    text-align: left;
+    text-transform: none;
+    font-size: 0.925em;
+    white-space: nowrap;
+}
+
+#off_canvas_left ul.menu ul.is-accordion-submenu.is-active {
+    border-bottom: 0.025em solid #f4f1e1;
+    border-top: 0.025em solid #f4f1e1;
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.1)
+}
+
+#header #nav ul.menu li a:hover,
+#off_canvas_left ul.menu li a:hover {
+    color: #fce5c0;
+}
+
+#header #nav .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent:hover > a::after,
+#off_canvas_left .accordion.menu > li.is-accordion-submenu-parent:hover > a::after {
+    border-color: #fce5c0 transparent transparent;
+}
+
+#main {
+    background: #fff;
+}
+
+body.default-interior #main {
+    background: #f3ecc9;
+}
+
+#home-top {
+    padding: 1em 0;
+    background-color: #2c4561;
+    color: #fff;
+}
+
+#home-angelus {
+    padding: 1em;
+}
+
+#home-angelus h3 {
+    color: #f6dda9;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#home-angelus p.tagline {
+    font-weight: bold;
+    font-size: 1.125em;
+}
+
+#home-angelus h4 {
+    font-size: 1.125em;
+}
+
+#home-angelus .read-more {
+    text-align: center;
+}
+
+#main .button {
+    color: #f6dda9;
+    border-color: #484647;
+    border-radius: 0.125em;
+    background-color: #121e2c;
+}
+
+#main .button:hover {
+    color: #ffdb91;
+    text-decoration: none;
+}
+
+#main .fill-item {
+    width: 100%;
+    height: 500px;
+    background: url(../images/blank.jpg) no-repeat center top;
+    background-size: cover;
+}
+
+#main .fill-item a.caption {
+    position: absolute;
+    bottom: 0.75em;
+    line-height: 0.5em;
+    left: 3em;
+    right: 3em;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0.125em 0.125em 0.25em #000;
+}
+
+#main .button.caption-tag {
+    padding: 0.375em;
+    margin-left: 0.5em;
+    margin-top: 1.325em;
+}
+
+/* carousel theme */
+
+.owl-carousel {
+    position: relative;
+}
+
+.owl-wrapper-outer {
+    position: relative;
+}
+
+.owl-controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+}
+
+.owl-controls .owl-prev,
+.owl-controls .owl-next {
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 0.125em 0.125em 0.25em #000;
+}
+
+.owl-controls .owl-prev {
+    float: left;
+}
+
+.owl-controls .owl-next {
+    float: right;
+}
+
+/* end carousel theme */
+
+
+#home-bottom {
+    background: #fff7d8 url("../images/bottom-box-bg.jpg") no-repeat scroll right bottom;
+}
+
+#home-services {
+    background-color: #f6efcb;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#home-services h3 {
+    font-weight: bold;
+    font-size: 1.875em;
+}
+
+.service .notes {
+    font-style: italic;
+    color: #333;
+}
+
+.no-service {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#home-services h5 {
+    color: #a44339;
+}
+
+.home-big-link {
+    background-color: #dbc8a4;
+    border-bottom: 0.125em solid #f6efcb;
+}
+
+.home-big-link.last {
+    border-bottom: none;
+}
+
+.home-big-link .image {
+    padding-right: 0;
+}
+
+.home-big-link a {
+    color: #000;
+}
+
+.home-big-link a h3 {
+    margin-top: 0.75em;
+    font-size: 1.325em;
+    line-height: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.focus {
+    font-style: italic;
+}
+
+.focus .columns {
+    padding-top: 2em;
+    padding-left: 1.5em;
+}
+
+.focus .columns p span {
+    font-size: 1.25em;
+}
+
+#home-bottom.rearranged,
+#home-services.rearranged,
+.home-big-link.rearranged {
+    background-color: #f6efcb;
+}
+
+.home-big-link.rearranged {
+    border: none;
+    padding-top: 1em;
+}
+
+.home-big-link.rearranged .text {
+    padding: 0 1em;
+}
+
+.home-big-link.rearranged .image {
+    padding-right: 0.9375rem;
+}
+
+#top-footer {
+    background-color: #49545f;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0.025em 0.025em 0.125em #000;
+}
+
+#top-footer .columns {
+    padding: 1em;
+}
+
+#top-footer .columns .tagline {
+    margin-bottom: 0;
+}
+
+#top-footer h5 {
+    color: #fce5c0;
+    font-weight: bold;
+}
+
+#bottom-footer {
+    border-top: 0.125em solid #cabfae;
+    background: #597084;
+}
+
+#bottom-footer .social a {
+    color: #fff;
+}
+
+#bottom-footer .social a:hover {
+    color: #fce5c0;
+}
+
+#bottom-footer .search label {
+    display: inline;
+    color: #fff;
+    font-size: 1.25em;
+    line-height: 1em;
+    padding-right: 0.5em;
+}
+
+#bottom-footer .search {
+    padding: 0.5em 0.5em 0.5em 1.5em;
+}
+
+#bottom-footer .search input {
+    display: inline;
+    width: auto;
+    height: auto;
+    font-size: 0.875em;
+    border-radius: 0.125em;
+    color: #777;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 40em) {
+    #bottom-footer .search {
+        text-align: right;
+    }
+}
+
+#main a {
+    color: #2863a8;
+}
+
+#main a:hover {
+    color: #3a7bc1;
+    /*
+    color: #49545f;
+    color: #597084;
+    */
+    text-decoration: underline;
+}
+
+#main .thumbnail {
+    border-color: #fff7d8;
+}
+
+#main .thumbnail:focus,
+#main .thumbnail:hover {
+    box-shadow: 0 0 6px 1px rgba(43, 61, 77, 0.5);
+}
+
+#main .clergy h4 {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0;
+}
+
+#main .clergy p {
+    font-size: 0.975em;
+}
+
+#main .clergy .clergy-staff-bio,
+#main .clergy .clergy-staff-title {
+    margin-bottom: 0.25em;
+}
+
+#main .clergy strong.clergy-name {
+    font-size: 1.25em;
+}
+
+#main .clergy.clergy-large img {
+    width: 12em;
+}
+
+#main .clergy.clergy-small img {
+    height: 16em;
+}
+
+#main .clergy.clergy-small {
+    text-align: center;
+}
+
+#main .subtitle,
+#main .callout-link {
+    text-align: center;
+    padding: 1em 0;
+}
+
+#main .callout-link .button {
+    font-size: 1.125em;
+}
+
+#main .subtitle h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #49545f;
+    text-shadow: -1px -1px 1px #f3ecc9, 1px 1px 1.25px #000;
+    margin: 1em 0 0.5em 0;
+}
+
