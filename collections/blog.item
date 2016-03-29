@@ -1,0 +1,111 @@
+
+{.section item}
+
+<div class="post-wrapper">
+<!--WRAPPER-->
+<section class="body">  
+  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+    
+    <!--POST TILE-->
+
+    <h1 class="title">
+      {.passthrough?}
+        <a href="{sourceUrl}" target="_blank">{title}</a>
+      {.or}
+        <a href="{fullUrl}">{title}</a>
+      {.end}
+    </h1>
+
+    <h2 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time><a href="{collection.fullUrl}?author={author.id}" class="author">{author.displayName}</a></h2>
+
+    <!--MAIN CONTENT-->
+
+    {body}
+
+    <!--BLOG INJECTION-->
+
+    {postItemInjectCode}    
+
+    <!--CATEGORIES-->
+
+    <div class="post-meta">
+
+      <!--COMMENTS, SHARE, LIKE-->
+      <div class="comment-share-like">
+        {.passthrough?}{.or}{.section sourceUrl}<a href="{sourceUrl}" class="source" target="_blank" title="Source">Source</a>{.end}{.end}
+        {.comments?}
+          {.if websiteSettings.disqusShortname}
+          {@|comment-link}
+          {.or}
+          {.section publicCommentCount}
+          <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">
+            {@} Comment{@|pluralize}
+          </a>
+            {.or}
+              <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">Comment</a>
+            {.end}
+          {.end}
+        {.end}
+        {.if websiteSettings.simpleLikingEnabled}<a class="like" title="Like this">{@|like-button}</a>{.end}
+        {@|social-button-inline}
+      </div>
+      {.if categories || tags} 
+        <div class="tags-cats">
+          <!--CATEGORIES-->
+          {.if categories}
+            <em>categories</em> {.repeated section categories}
+              <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+            {.end}
+            <br />
+          {.end}
+          {.if tags}
+            <!--TAGS-->
+            <em>tags</em> {.repeated section tags}
+              <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
+            {.end}
+          {.end}
+        </div>
+      {.end}
+    </div>
+
+  </article>
+</section>
+
+{.end}
+
+{.section pagination}
+  <div class="pagination">
+    {.section prevItem}
+    <div class="left">
+      <span class="prev"><a href="{fullUrl}">&larr;</a></span>
+      <span class="prev-title"><a href="{fullUrl}"><strong>{addedOn|date %B %d, %Y}</strong><br>{title}</a></span>
+    </div>
+    {.or}
+    <div class="left none">
+      <span class="prev">&larr;</span>
+    </div>
+    {.end}
+    {.section nextItem}
+    <div class="right">
+      <span class="next"><a href="{fullUrl}">&rarr;</a></span>
+      <span class="next-title"><a href="{fullUrl}"><strong>{addedOn|date %B %d, %Y}</strong><br>{title}</a></span>
+    </div>
+    {.or}
+    <div class="right none">
+      <span class="next">&rarr;</span>
+    </div>
+    {.end}
+  </div>
+{.end}
+</div> <!-- /.post-wrapper -->
+
+{.section item}
+  <!-- COMMENTS -->
+  {.comments?}
+  <div id="commentsWrapper">
+  <section id="comments-{id}" class="comments-wrapper">
+    {@|comments}
+  </section>
+  </div>
+  {.end}
+{.end}

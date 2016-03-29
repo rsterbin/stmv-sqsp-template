@@ -1,0 +1,276 @@
+
+/* SITE WIDE
+---------------------------------------------------*/
+
+// tweak: { "category" : "Site Wide", "type" : "checkbox", "title" : "Site Drop Shadow", "active" : true, "target" : ".outer-wrapper" }
+
+// tweak: { "category" : "Site Wide", "type" : "image", "title" : "Site Background Image", "target" : "body" }
+.bg-image {
+  background-image: none;
+  background-position: top left;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+// tweak: { "category" : "Site Wide", "type" : "color", "title" : "Site Background Color", "target" : "body" }
+@siteBgColor: #f3f3f3;
+
+
+
+/* HEADER
+---------------------------------------------------*/
+
+// tweak: { "category" : "Site Header", "type" : "font", "title" : "Site Title", "label" : "Site Title Font", "target" : "h1.site-title" }
+.site-title-font {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+// tweak: { "category" : "Site Header", "type" : "value", "title" : "Logo Height", "min" : 25, "max" : 125, "target" : "img.logo", "property" : "height", "showOnlyWhenPresent" : ".site-title img" }
+@logoHeight: 75px;
+
+// tweak: { "category" : "Site Header", "type" : "color", "title" : "Header Background Color", "label" : "Background Color", "target" : "#header, .email-open .contact-wrapper, .desc-open #contactInfo" }
+@headerBgColor: #ffffff;
+
+// tweak: { "category" : "Site Header", "type" : "checkbox", "title" : "Header Icons", "active" : true, "target" : "#info, #email, #header, .icon-menu, #header-search" }
+
+// tweak: { "category" : "Site Header", "type" : "dropdown", "title" : "Header Dropdown Contact or Location", "label" : "Contact, Location, or Search Dropdown", "options" : [ "Contact", "Location", "Search", "None" ], "active" : "Contact", "target" : "#info, #email, #header, #header-search" }
+
+
+
+/* NAVIGATION
+---------------------------------------------------*/
+
+// tweak: { "category" : "Navigation", "type" : "font", "title" : "Navigation", "label" : "Font", "target" : "#header, nav ul li a" }
+.nav-font {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1em;
+}
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Nav Background Color", "label" : "Background Color", "target" : "#header, #folderNav, .footer-nav" }
+@navBgColor: #ffffff;
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Nav Active Color", "target" : "#header, nav ul li a" }
+@navActiveColor: #83b3be;
+
+// tweak: { "category" : "Navigation", "type" : "checkbox", "title" : "Always Show Nav", "active" : false, "target" : "#header" }
+
+// tweak: { "category" : "Navigation", "type" : "checkbox", "title" : "Header & Nav Borders", "active" : true, "target" : "#header, .footer-nav, #folderNav" }
+
+
+
+/* BANNER
+---------------------------------------------------*/
+
+// tweak: { "category" : "Banner Image", "type" : "value", "title" : "Banner Image Height", "label" : "Height", "min" : 100, "max" : 800, "target" : ".main-image", "property" : "height", "js" : true, "showOnlyWhenPresent" : ".main-image-wrapper" }
+@bannerImageHeight: 525px;
+
+
+
+
+/* PAGE TITLES & DESCRIPTIONS
+---------------------------------------------------*/
+
+// tweak: { "category" : "Page Titles & Descriptions", "type" : "dropdown", "title" : "Title Decoration", "options" : [ "Underline", "Overline", "3 Stars", "3 Asterisks", "None" ], "active" : "Underline", "target" : ".collection-title-desc, h1.page-title, h1.product-title, h1.title" }
+
+// tweak: { "category" : "Page Titles & Descriptions", "type" : "checkbox", "title" : "Page Titles & Descriptions", "label" : "Show Page Titles & Descriptions", "active" : true, "target" : ".collection-title-desc, h1.page-title, .collection-desc p, .gallery-collection-desc p" }
+
+// tweak: { "category" : "Page Titles & Descriptions", "type" : "font", "title" : "Page Title", "target" : ".collection-title-desc, h1.page-title", "showOnlyWhenPresent" : ".page-titles--descriptions" }
+.page-title-font-basic {
+  font-family: "Open Sans", sans-serif;
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  text-decoration: none;
+  text-align: center;
+}
+
+// tweak: { "category" : "Page Titles & Descriptions", "type" : "font", "title" : "Page Description", "target" : ".collection-title-desc, .collection-desc p, .gallery-collection-desc p", "loadAllVariants" : true, "showOnlyWhenPresent" : ".page-titles--descriptions .collection-desc" }
+.page-desc-font {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.6em;
+  text-align: center;
+}
+
+// tweak: { "category" : "Page Titles & Descriptions", "type" : "color", "title" : "Page Title & Description Color", "target" : ".collection-title-desc, h1.page-title, .collection-desc p, .gallery-collection-desc p", "showOnlyWhenPresent" : ".page-titles--descriptions" }
+@pageTitleDescColor: #454545;
+
+
+
+
+/* MAIN CONTENT
+---------------------------------------------------*/
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Content Background Color", "target" : ".outer-wrapper" }
+@contentBgColor: #ffffff;
+
+// tweak: { "category" : "Main Content", "title" : "Heading 1", "type" : "font", "loadAllVariants" : true, "target" : ".main-content-wrapper h1, h1.product-title, h1.title" }
+.heading-1-font {
+  font-family: "Open Sans", sans-serif;
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  text-decoration: none;
+}
+
+// tweak: { "category" : "Main Content", "title" : "Heading 2", "type" : "font", "loadAllVariants" : true, "target" : ".main-content-wrapper h2" }
+.heading-2-font {
+  font-family: "Open Sans", sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  text-decoration: none;
+  text-align: left;
+}
+
+// tweak: { "category" : "Main Content", "title" : "Heading 3", "type" : "font", "loadAllVariants" : true, "target" : ".main-content-wrapper h3" }
+.heading-3-font {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  text-decoration: none;
+  text-align: left;
+}
+
+// tweak: { "category" : "Main Content", "title" : "Heading Color", "type" : "color", "target" : ".main-content-wrapper h1, .main-content-wrapper h2, .main-content-wrapper h3, h1.title" }
+@headingsColor: #454545;
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Text", "target" : ".main-content-wrapper p", "loadAllVariants" : true }
+.text-font {
+  font-family: Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.6em;
+  text-align: left;
+}
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Text Color", "target" : ".main-content-wrapper p, .main-content-wrapper ul, .main-content-wrapper ol, .main-content-wrapper blockquote" }
+@textColor: #232323;
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Link Color", "target" : ".outer-wrapper, .main-content-wrapper p a" }
+@bodyLinkColor: #83b3be;
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Link Hover Color", "target" : ".outer-wrapper, .main-content-wrapper p a" }
+@bodyLinkHoverColor: #000000;
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Quote Block", "target" : ".quote-block blockquote" }
+.quote-font {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  line-height: 1.6em;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 0px;
+  text-decoration: none;
+  text-align: left;
+}
+
+
+
+/* SUMMARY BLOCK
+---------------------------------------------------*/
+
+// tweak: { "category" : "Summary Block", "title" : "Summary Block Title Font", "type" : "font", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
+.summary-heading-font {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+// tweak: { "category" : "Summary Block", "title" : "Summary Block Title Color", "type" : "color", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
+@summaryHeadingColor: #454545;
+
+
+
+/* BLOG
+---------------------------------------------------*/
+
+// tweak: { "category" : "Blog", "type" : "dropdown", "title" : "Blog Text Width", "options" : [ "Narrow", "Normal" ], "active" : "Narrow", "target" : ".collection-type-blog .main-content-wrapper", "showOnlyWhenPresent" : ".collection-type-blog" }
+
+// tweak: { "category" : "Blog", "type" : "checkbox", "title" : "Blog Post Author", "active" : false, "target" : ".date-author, .author", "showOnlyWhenPresent" : ".collection-type-blog" }
+
+// tweak: { "category" : "Blog", "type" : "font",   "title" : "Blog Meta Info", "target" : ".date-author, .post-meta, .summary-info-item", "showOnlyWhenPresent" : ".collection-type-blog, .summary-info-item" }
+.meta-font {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1em;
+  text-transform: none;
+  letter-spacing: 0px;
+  text-align: center;
+  text-decoration: none;
+}
+
+// tweak: { "category" : "Blog", "type" : "color",  "title" : "Blog Meta Info Color", "target" : ".date-author, .post-meta, .summary-info-item", "showOnlyWhenPresent" : ".collection-type-blog, .summary-info-item" }
+@metaColor: #bcbcbc;
+
+
+
+/* PRODUCTS
+---------------------------------------------------*/
+
+// tweak: { "type" : "checkbox", "title" : "Show Category Navigation", "active" : false, "target" : ".main-content-wrapper", "showOnlyWhenPresent" : ".collection-type-products", "category" : "Products" }
+
+
+
+/* DISABLED TWEAKS
+---------------------------------------------------*/
+// OFFtweak: { "type" : "value", "title" : "Max Site Width", "min" : 800, "max" : 1600, "target" : "", "js" : true }
+@siteWidth: 1118px;
+/* VARIABLE IN USE -- DO NOT DELETE */
+
+// OFFtweak: { "type" : "value", "title" : "Blog Content Width", "min" : 40, "max" : 100, "target" : "" }
+@blogContentWidth: 60%;
+/* VARIABLE IN USE -- DO NOT DELETE */
+
+// OFFtweak: { "type" : "value", "title" : "Content Inner Padding", "min" : 15, "max" : 150, "target" : "" }
+@contentInnerPadding: 75px;
+/* VARIABLE IN USE -- DO NOT DELETE */
+
+// OFFtweak: { "type" : "value", "title" : "Header Vertical Padding", "min" : 0, "max" : 100, "property" : ["padding-top", "padding-bottom"], "target" : "" }
+@headerPadding: 40px;
+/* VARIABLE IN USE -- DO NOT DELETE */
+
+// OFFtweak: { "type" : "image", "title" : "Default Banner Image", "js" : true, "target" : ".main-image" }
+.header-image {
+  background-image: none;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+

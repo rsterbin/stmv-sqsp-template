@@ -1,0 +1,16 @@
+<div id="folderNav" data-content-field="navigation-foldernav">
+  <nav class="folder-nav">
+    <ul>
+    {.repeated section items}
+      {.collection?}
+      <li class="{.if active} active-link{.end}"><a href="{collection.fullUrl}">{collection.navigationTitle}</a></li>
+      {.end}
+  
+      {.section externalLink}
+      <li class="external-link"><a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a></li>
+      {.end}
+  
+    {.end}
+    </ul>
+  </nav>
+</div>

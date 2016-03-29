@@ -1,0 +1,212 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {.if template.mobileStylesEnabled}
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {.end}
+
+    <!--INCLUDE SQS SCRIPTS, META TAGS AND USER CONTENT FROM THE CODE INJECTION TAB-->
+
+    {squarespace-headers}
+    <squarespace:script src="site.js" combo="false" />
+  
+  </head>
+  {.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Disabled -->{.end}
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes}{.section collection}{.section mainImage} has-main-image{.end}{.end}{.section website}{.if logoImageUrl} logo-image{.end}{.location?} has-location{.end}{.if siteDescription} has-description{.end}{.end}{.section websiteSettings}{.if contactPhoneNumber} has-phone-number{.end}{.section contactEmail} has-email{.end}{.end}">
+
+    <div class="contact-wrapper">
+      <div class="contact-inner-wrapper">
+        <squarespace:block-field id="contactBlock" columns="12" lock-layout="true" label="Header Contact Info Block" />
+      </div>
+    </div>
+
+    <div id="contactInfo">
+      <div class="contact-inner-wrapper contact-info-inner-wrapper">
+
+        <div class="map-image">{.section website}{.location?}{.section location}<a href="//maps.google.com/maps?q={markerLat},{markerLng}" target="_blank" title="View map in new window"><img src="//maps.googleapis.com/maps/api/staticmap?markers={markerLat},{markerLng}&size=400x250&scale=2&zoom={mapZoom}&sensor=false"></a>{.end}{.end}{.end}</div>
+
+        {.if websiteSettings.number || websiteSettings.email}{.or}{.if website.location.addressLine1 || website.location.addressLine2 || website.location.addressCountry || website.description}<div class="address-phone-email">
+            {.section website}{.location?}{.section location}
+                <p class="site-location">
+                  {.section addressLine1}<span>{@}</span>{.end}<br>
+                  {.section addressLine2}<span>{@}</span>{.end}<br>
+                  {.section addressCountry}<span>{@}</span>{.end}
+                </p>
+            {.end}{.end}{.end}
+            {.section websiteSettings}
+              {.section contactPhoneNumber}<p class="phone">{@}</p>{.end}
+              {.section contactEmail}<p class="email"><a href="mailto:{@}">{@}</a></p>{.end}
+            {.end}
+            {.section website}
+              {.section siteDescription}<div class="site-description">{@}</div>{.end}
+            {.end}
+            </div>{.or}<div class="address-phone-email">
+                <p>123 Street Avenue, City Town, 99999</p>
+              <p>(123) 555-6789</p>
+              <p>email@address.com</p>
+              <p>&nbsp;</p>
+              <p>You can set your address, phone number, email and site description in the settings tab.<br />Link to <a href="/read-me">read me page</a> with more information.</p>
+            </div>{.end}{.end}
+            
+      </div>
+    </div>
+    <nav id="mobile-navigation" class="mobile-nav">
+      <squarespace:navigation navigationId="mainNav" template="navigation-mobile" />
+    </nav>
+    <div class="opacity-overlay"></div>
+    <div class="outer-wrapper">
+      <div class="wrapper cf">
+        <div id="mobile-header">
+          <a class="icon-menu" id="mobileMenu"></a><!-- comment the space between elements because science
+          -->{.section website}<div class="site-title-wrapper">
+            <h1 data-content-field="site-title" class="site-title">
+              <a href="/" class="home-link">{siteTitle}</a>
+            </h1>
+          </div>{.end}<!-- comment the space between elements because science
+          --><div class="info-email-wrapper">
+            <a id="info-mobile" class="icon-info"><span class="icon-text">Info</span></a>
+            <div id="email-mobile">
+              <a class="icon-email"><span class="icon-text">Email</span></a>
+            </div>
+            <div id="search-mobile">
+              <a class="icon-search" href="/search" data-source="template"><span class="icon-text">Search</span></a>
+            </div>
+          </div>
+        </div>
+        <header id="header">
+
+          <!--MAIN NAVIGATION-->
+          <nav id="main-navigation" class="main-nav">
+            <div class="info-title-email-wrapper">
+
+              <a class="icon-menu" id="desktopMenu"><span class="icon-text">Menu</span></a>
+              
+              {.section website}
+              <div class="site-title-wrapper">
+                <h1 data-content-field="site-title" class="site-title">
+                    {.section logoImageUrl}
+                     <div class="logo-wrapper"><a href="/" class="home-link"><img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" class="logo" /></a></div>
+                     <div class="logo-image-title"><a href="/" class="home-link">{siteTitle}</a></div>
+                    {.or}
+                      <a href="/" class="home-link">{siteTitle}</a>
+                    {.end}
+                </h1>
+              </div>
+              {.end}
+
+              <a id="info" class="icon-info"><span class="icon-text">Info</span></a>
+              <div id="email">
+                <a class="icon-email"><span class="icon-text">Email</span></a>
+              </div>
+              <div id="headerSearch">
+                <a class="icon-search" href="/search" data-source="template"><span class="icon-text">Search</span></a>
+              </div>
+            </div>
+
+            <squarespace:navigation navigationId="mainNav" template="navigation" />
+
+          </nav>
+        </header>
+
+        <!--CONTENT INJECTION POINT-->
+
+        <section id="content">
+          {.if item}
+            {.section item}
+              {.main-image?}
+                <div class="main-image-wrapper">
+                  <div class="main-image content-fill" data-item-id="{id}" data-content-field="main-image"><img {@|image-meta} /></div>
+                </div>
+              {.end}
+            {.end}
+          {.or}
+            {.section collection}
+              {.equal? typeName "album"}
+              {.or}
+              {.equal? typeName "gallery"}
+              {.or}
+                {.main-image?}
+                  {.section mainImage}
+                  <div class="main-image-wrapper" data-collection-id="{collection.id}" data-edit-main-image="Banner" data-annotation-alignment="bottom left">
+                    <div class="main-image content-fill" data-collection-id="{id}" data-content-field="main-image"><img {@|image-meta} /></div>
+                  </div>
+                  {.end}
+                {.end}
+              {.end}
+              {.end}
+            {.end}
+          {.end}
+        <squarespace:folder-navigation template="foldernav" />
+
+        {.section collection}{.equal? typeName "products"}{.section categories}
+        <div id="categoryNav">
+          <input type="checkbox" name="category-nav-toggle" id="categoryNavToggle" class="category-nav-toggle hidden" />
+          <label for="categoryNavToggle" class="category-nav-toggle-label" onclick></label>
+          <nav class="category-nav">
+            <ul class="category-nav-links">
+              <li class="filter"><a>Filter{.if categoryFilter}: {categoryFilter}{.end}</a></li>
+              <li{.if categoryFilter}{.or} class="active-link all"{.end}><a href="{fullUrl}">All</a></li>
+            {.repeated section @}
+              <li{.equal? categoryFilter @} class="active-link"{.end}><a href="{fullUrl}?category={@|url-encode}">{@}</a></li>
+            {.end}
+            </ul>
+          </nav>
+        </div>
+        {.end}{.end}{.end}
+
+        <div class="content-inner-wrapper">
+          {.section collection}{.equal? typeName "album"}
+              {.or}{.if description || title}<div class="collection-title-desc" data-collection-id="{id}" {.equal? collection.typeName "gallery"}{.or}{.equal? collection.typeName "album"}{.or}data-edit-main-image="Banner"{.end}{.end}>
+            <div class="collection-title-basic"><h1 class="page-title">{title}</h1></div>
+            {.if description}<div class="collection-desc">{description}</div>{.end}{.end}
+          </div>{.end}{.end}
+            <div class="main-content-wrapper" data-content-field="main-content" data-collection-id="{collection.id}" {.equal? collection.typeName "gallery"}{.or}{.equal? collection.typeName "album"}{.or}data-edit-main-image="Banner"{.end}{.end}>
+              {squarespace.main-content}
+            </div>
+        </div>
+        </section>
+      </div> <!-- end .wrapper -->
+
+      <squarespace:navigation navigationId="footerNav" template="footernav" />
+
+      <footer id="footer" class="cf">
+        <squarespace:block-field id="footerBlockLeft" columns="1" label="Left Footer Content" />
+        <squarespace:block-field id="footerBlockRight" columns="1" label="Right Footer Content" />
+      </footer>
+    </div> <!-- end .outer-wrapper -->
+
+    <!--INJECTION POINT FOR TRACKING SCRIPTS AND USER CONTENT FROM THE CODE INJECTION TAB-->
+
+    {squarespace-footers}
+
+{.if template.mobileStylesEnabled}{.or}
+  <script>
+    Y.use('node', function() {
+      Y.on('domready', function() {
+        var move;
+        Y.all('.folder-child a').each(function(a) {
+          a.on('touchstart', function() {
+            move = false;
+          });
+          a.on('touchmove', function() {
+            move = true;
+          });
+          a.on('touchend', function() {
+            if (move === false) {
+              window.location = a.getAttribute('href');
+            }
+          });
+        });
+      });
+    });
+  </script>
+{.end}
+    
+  </body>
+
+</html> 

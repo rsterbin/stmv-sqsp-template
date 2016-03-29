@@ -1,0 +1,123 @@
+
+<!-- CATEGORY FILTER RESULTS ex: http://base-template.squarespace.com/blog/?category=category1 -->
+
+{.section categoryFilter}
+  <p class="filter">Filtering by Category: {@|safe}</p>
+{.end}
+
+<!-- TAG FILTER RESULTS ex: http://base-template.squarespace.com/blog/?tag=tag2 -->
+
+{.section tagFilter}
+  <p class="filter">Filtering by Tag: {@|safe}</p>
+{.end}
+
+<!-- AUTHOR FILTER RESULTS ex: http://www.base-template.com/blog?author=4f046df4d09ae2cf23d1aaa2 -->
+
+{.if authorFilter}
+  <p class="filter">Filtering by Author: {author.displayName}</p>
+{.end}
+
+<!--ITEM LOOP-->
+
+  <div class="post-wrapper">
+<!--WRAPPER-->
+<section class="body">
+  {.repeated section items}
+  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+    
+    <!--POST TILE-->
+
+    <h1 class="title">
+      {.passthrough?}
+        <a href="{sourceUrl}" target="_blank">{title}</a>
+      {.or}
+        <a href="{fullUrl}">{title}</a>
+      {.end}
+    </h1>
+
+    <h2 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time><a href="{collection.fullUrl}?author={author.id}" class="author">{author.displayName}</a></h2>
+
+    <!--MAIN CONTENT-->
+
+    {.if excerpt}
+      {excerpt}
+      <a class="link" href="{fullUrl}">Read More</a>
+    {.or}
+      {body}
+    {.end}
+
+    <!--BLOG INJECTION-->
+
+    {postItemInjectCode}    
+
+    <!--CATEGORIES-->
+
+    <div class="post-meta">
+
+      <!--COMMENTS, SHARE, LIKE-->
+      <div class="comment-share-like">
+        {.passthrough?}{.or}{.section sourceUrl}<a href="{sourceUrl}" class="source" target="_blank" title="Source">Source</a>{.end}{.end}
+        {.comments?}
+          {.if websiteSettings.disqusShortname}
+          {@|comment-link}
+          {.or}
+          {.section publicCommentCount}
+          <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">
+            {@} Comment{@|pluralize}
+          </a>
+            {.or}
+              <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">Comment</a>
+            {.end}
+          {.end}
+        {.end}
+        {.if websiteSettings.simpleLikingEnabled}<a class="like" title="Like this">{@|like-button}</a>{.end}
+        {@|social-button-inline}
+      </div>
+      {.if categories || tags} 
+        <div class="tags-cats">
+          <!--CATEGORIES-->
+          {.if categories}
+            <em>categories</em> {.repeated section categories}
+              <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+            {.end}
+            <br />
+          {.end}
+          {.if tags}
+            <!--TAGS-->
+            <em>tags</em> {.repeated section tags}
+              <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
+            {.end}
+          {.end}
+        </div>
+      {.end}
+    </div>
+
+  </article>
+  {.end}
+</section>
+
+<!--PAGINATION-->
+  
+{.if pagination}
+  <nav class="pagination">
+
+    <!--OLDER PAGE-->
+
+    {.if pagination.prevPage}
+      <span class="prev"><a href="{pagination.prevPageUrl}" class="older">&larr;</a></span>
+    {.or}
+      <span class="disabled prev">&larr;</span>
+    {.end}
+
+    <!--NEWER PAGE-->
+
+    {.if pagination.nextPage}
+      <span class="next"><a href="{pagination.nextPageUrl}" class="newer">&rarr;</a></span>
+    {.or}
+      <span class="disabled next">&rarr;</span>
+    {.end}
+
+  </nav>
+{.end}
+
+</div>
