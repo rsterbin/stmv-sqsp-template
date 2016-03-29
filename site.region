@@ -14,7 +14,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script></script>
         <script src="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js"></script>
-        <squarespace:script src="owl-carousel/owl-carousel.js" combo="false" />
+        <squarespace:script src="owl-carousel/owl.carousel.js" combo="false" />
 
         <title>The Church of Saint Mary the Virgin, Times Square</title>
     </head>
