@@ -15,15 +15,26 @@
 </ul>
 <script>
 $(document).ready(function (){
+    var socialmappings = [
+        { icon: 'fa-facebook-f', regex:  /facebook\.com/ },
+        { icon: 'fa-twitter', regex:  /twitter\.com/ },
+        { icon: 'fa-instagram', regex:  /instagram\.com/ },
+        { icon: 'fa-pinterest-p', regex:  /pinterest\.com/ },
+        { icon: 'fa-flickr', regex:  /flickr\.com/ },
+    ];
     $('.social a').each(function () {
-        var $a = $(this);
-        if ($a.attr('href').match(/facebook.com/)) {
-            $a.prepend('<i class="fa fa-facebook-f"></i> ');
-        } else if ($a.attr('href').match(/twitter.com/)) {
-            $a.prepend('<i class="fa fa-twitter"></i> ');
-        } else if ($a.attr('href').match(/instagram.com/)) {
-            $a.prepend('<i class="fa fa-instagram"></i> ');
-        } else {
+        var $a = $(this),
+            m = false;
+        for (var i = 0; i < socialmappings.length; i++) {
+            var re = socialmappings[i].regex,
+                ic = socialmappings[i].icon,
+            if ($a.attr('href').match(re)) {
+                $a.prepend('<i class="fa ' + ic + "></i> ');
+                m = true;
+                continue;
+            }
+        }
+        if (!m) {
             $a.prepend('<i class="fa fa-circle-o"></i> ');
         }
     });
