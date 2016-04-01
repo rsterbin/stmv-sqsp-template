@@ -20,62 +20,7 @@
         <div class="off-canvas-wrapper">
             <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
                 <div class="off-canvas position-left" id="off_canvas_left" data-off-canvas>
-                    <ul class="menu vertical accordion" data-accordion-menu>
-                        <li>
-                            <a href="#">About</a>
-                            <ul class="menu vertical">
-                                <li><a href="#">Directions &amp; Visitor Information</a></li>
-                                <li><a href="#">Mission &amp; Outreach</a></li>
-                                <li><a href="#">The Angelus: Our Newsletter</a></li>
-                                <li><a href="#">Children at Saint Mary’s</a></li>
-                                <li><a href="#">Weddings, Baptisms, &amp; Funerals</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Worship</a>
-                            <ul class="menu vertical">
-                                <li><a href="#">Sermons</a></li>
-                                <li><a href="#">Bible Lessons for All Services</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Music</a>
-                            <ul class="menu vertical">
-                                <li><a href="#">Liturgical Music List</a></li>
-                                <li><a href="#">Organ Recital Schedule</a></li>
-                                <li><a href="#">Concert Schedule</a></li>
-                                <li><a href="#">Our Organ</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Calendar</a>
-                            <ul class="menu vertical">
-                                <li><a href="#">Worship Schedule</a></li>
-                                <li><a href="#">Bible Study &amp; Classes</a></li>
-                                <li><a href="#">Parish Events</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Clergy &amp; Staff</a>
-                            <ul class="menu vertical">
-                                <li><a href="#">Music Department</a></li>
-                                <li><a href="#">Sisters at Saint Mary’s</a></li>
-                                <li><a href="#">Information Request Form</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Giving</a></li>
-                        <li>
-                            <a href="#">History</a>
-                            <ul class="menu vertical">
-                                <li><a href="#">Historical Photos</a></li>
-                                <li><a href="#">Parish Archives</a></li>
-                                <li><a href="#">The Arrow Archives</a></li>
-                                <li><a href="#">Annual Reports</a></li>
-                                <li><a href="#">Parish Histories</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Gallery</a></li>
-                    </ul>
+                    <squarespace:navigation navigationId="mainNav" template="navigation-mobile" />
                 </div>
 
                 <div class="off-canvas-content" data-off-canvas-content>
@@ -93,62 +38,7 @@
                             </div>
 
                             <div class="small-12 columns menu-centered show-for-medium" id="nav">
-                                <ul class="menu vertical medium-horizontal dropdown" data-dropdown-menu>
-                                    <li>
-                                        <a href="#">About</a>
-                                        <ul class="menu">
-                                            <li><a href="#">Directions &amp; Visitor Information</a></li>
-                                            <li><a href="#">Mission &amp; Outreach</a></li>
-                                            <li><a href="#">The Angelus: Our Newsletter</a></li>
-                                            <li><a href="#">Children at Saint Mary’s</a></li>
-                                            <li><a href="#">Weddings, Baptisms, &amp; Funerals</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Worship</a>
-                                        <ul class="menu">
-                                            <li><a href="#">Sermons</a></li>
-                                            <li><a href="#">Bible Lessons for All Services</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Music</a>
-                                        <ul class="menu">
-                                            <li><a href="#">Liturgical Music List</a></li>
-                                            <li><a href="#">Organ Recital Schedule</a></li>
-                                            <li><a href="#">Concert Schedule</a></li>
-                                            <li><a href="#">Our Organ</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Calendar</a>
-                                        <ul class="menu">
-                                            <li><a href="#">Worship Schedule</a></li>
-                                            <li><a href="#">Bible Study &amp; Classes</a></li>
-                                            <li><a href="#">Parish Events</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Clergy &amp; Staff</a>
-                                        <ul class="menu">
-                                            <li><a href="#">Music Department</a></li>
-                                            <li><a href="#">Sisters at Saint Mary’s</a></li>
-                                            <li><a href="#">Information Request Form</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Giving</a></li>
-                                    <li>
-                                        <a href="#">History</a>
-                                        <ul class="menu">
-                                            <li><a href="#">Historical Photos</a></li>
-                                            <li><a href="#">Parish Archives</a></li>
-                                            <li><a href="#">The Arrow Archives</a></li>
-                                            <li><a href="#">Annual Reports</a></li>
-                                            <li><a href="#">Parish Histories</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Gallery</a></li>
-                                </ul>
+                                <squarespace:navigation navigationId="mainNav" template="navigation" />
                             </div>
                         </div>
 
@@ -157,12 +47,15 @@
                         </div>
 
                         <div class="row" id="bottom-footer">
-                            <div class="small-12 medium-7 columns social">
+                            <div class="small-12 medium-7 columns">
+                                <!--
                                 <ul class="menu vertical medium-horizontal">
                                     <li class="facebook"><a href="#"><i class="fa fa-facebook-f"></i> Like Us</a></li>
                                     <li class="twitter"><a href="#"><i class="fa fa-twitter"></i> Follow Us</a></li>
                                     <li class="instagram"><a href="#"><i class="fa fa-instagram"></i> See Us</a></li>
                                 </ul>
+                                -->
+                                <squarespace:navigation navigationId="footerNav" template="footernav" />
                             </div>
                             <div class="small-12 medium-5 columns search">
                                 <form method="post" action="#">
