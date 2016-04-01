@@ -1,0 +1,8 @@
+/*
+ * Fixes for foundation kicking squarespace
+ */
+
+.sqs-blockicon-content .label {
+    background: transparent;
+}
+
