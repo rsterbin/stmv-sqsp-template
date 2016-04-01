@@ -74,6 +74,11 @@ h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
 }
 
+#header #nav ul.menu .active > a,
+#off_canvas_left ul..menu .active > a {
+    background-color: transparent;
+}
+
 #header #nav .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after,
 #off_canvas_left .accordion.menu > li.is-accordion-submenu-parent > a::after {
     border-color: #fff transparent transparent;
@@ -87,7 +92,8 @@ h1,h2,h3,h4,h5,h6 {
     white-space: nowrap;
 }
 
-#off_canvas_left ul.menu ul.is-accordion-submenu.is-active {
+#off_canvas_left ul.menu ul.is-accordion-submenu.is-active,
+#off_canvas_left ul.menu ul.is-accordion-submenu.active {
     border-bottom: 0.025em solid #f4f1e1;
     border-top: 0.025em solid #f4f1e1;
     background: transparent;
@@ -95,11 +101,15 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #header #nav ul.menu li a:hover,
+#header #nav ul.menu li.is-active a,
+#header #nav ul.menu li.active a,
 #off_canvas_left ul.menu li a:hover {
     color: #fce5c0;
 }
 
 #header #nav .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent:hover > a::after,
+#header #nav .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent.is-active > a::after,
+#header #nav .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent.active > a::after,
 #off_canvas_left .accordion.menu > li.is-accordion-submenu-parent:hover > a::after {
     border-color: #fce5c0 transparent transparent;
 }
