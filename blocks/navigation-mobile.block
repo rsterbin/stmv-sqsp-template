@@ -3,7 +3,7 @@
   {.repeated section @}
     {.folder?}
     <li class="folder {.if folderActive} active{.end}">
-    <a href="#">{collection.navigationTitle}</a>
+    <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
     <ul class="menu vertical">
       {.repeated section items}
         {.collection?}
