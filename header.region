@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="Saint Mary's was founded in 1868 to be the Episcopal parish church for the new residential neighborhood, then called Longacre Square, here in midtown Manhattan. Our doors have been open daily for welcome and worship since December 8, 1870. All are welcome. Our members and friends now live both near and far from Times Square. We invite you to join us.">
+
+        <link rel="icon" href="/assets/new-favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script></script>
+        <script src="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js"></script>
+        <squarespace:script src="owl-carousel/owl.carousel.js" combo="false" />
+
+        {squarespace-headers}
+    </head>
+    <body class="default-interior">
+        <div class="off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+                <div class="off-canvas position-left" id="off_canvas_left" data-off-canvas>
+                    <squarespace:navigation navigationId="mainNav" template="navigation-mobile" />
+                </div>
+
+                <div class="off-canvas-content" data-off-canvas-content>
+                    <div id="site">
+
+                        <div class="row collapse" id="header">
+                            <div class="small-12 columns" id="titlebar">
+                                <div class="toggle-menu hide-for-medium" data-toggle="off_canvas_left">
+                                    <button class="menu-icon" type="button" data-toggle></button>
+                                    <div class="title-bar-title">Menu</div>
+                                </div>
+
+                                <h1><a href="/">The Church of Saint Mary the Virgin, Times Square</a></h1>
+                                <h2>The Episcopal Church Welcomes You</h2>
+                            </div>
+
+                            <div class="small-12 columns menu-centered show-for-medium" id="nav">
+                                <squarespace:navigation navigationId="mainNav" template="navigation" />
+                            </div>
+                        </div>
+

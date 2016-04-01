@@ -1,0 +1,38 @@
+
+                        <div class="row" id="bottom-footer">
+                            <div class="small-12 medium-7 columns">
+                                <squarespace:navigation navigationId="footerNav" template="footernav" />
+                            </div>
+                            <div class="small-12 medium-5 columns search">
+                                <squarespace:block-field id="footerSearchBox" columns="12" lock-layout="true" />
+                            </div>
+                        </div>
+
+                    </div><!-- end site -->
+                </div><!-- end off-canvas-content -->
+            </div><!-- end off-canvas-wrapper-inner -->
+        </div><!-- end off-canvas-wrapper -->
+
+        <script>
+            function cropImages(id) {
+                var width  = $('#' + id).width(),
+                    height = width * 0.75;
+                $('#' + id + ' .fill-item').css('height', height + 'px');
+            }
+            $(document).foundation();
+            $(document).ready(function (){
+                $(".owl-carousel").owlCarousel({
+                    singleItem: true,
+                    autoPlay: true,
+                    navigation: true,
+                    navigationText: [ '&#x00ab;', '&#x00bb;' ],
+                    pagination: false,
+                    afterInit: function() { cropImages('homecarousel'); },
+                    afterUpdate: function() { cropImages('homecarousel'); }
+                });
+            });
+        </script>
+
+    </body>
+</html>
+
