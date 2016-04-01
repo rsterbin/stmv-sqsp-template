@@ -27,7 +27,7 @@ $(document).ready(function (){
             m = false;
         for (var i = 0; i < socialmappings.length; i++) {
             var re = socialmappings[i].regex,
-                ic = socialmappings[i].icon,
+                ic = socialmappings[i].icon;
             if ($a.attr('href').match(re)) {
                 $a.prepend('<i class="fa ' + ic + '"></i> ');
                 m = true;
