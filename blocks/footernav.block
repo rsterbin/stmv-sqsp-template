@@ -29,7 +29,7 @@ $(document).ready(function (){
             var re = socialmappings[i].regex,
                 ic = socialmappings[i].icon,
             if ($a.attr('href').match(re)) {
-                $a.prepend('<i class="fa ' + ic + "></i> ');
+                $a.prepend('<i class="fa ' + ic + '"></i> ');
                 m = true;
                 continue;
             }
