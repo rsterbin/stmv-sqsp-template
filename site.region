@@ -64,7 +64,7 @@
                                     <input type="text" name="q" id="searchbox" />
                                 </form>
                                 -->
-                                <squarespace:block-field id="footerSearchBox" columns="12" />
+                                <squarespace:block-field id="footerSearchBox" columns="12" lock-layout="true" />
                             </div>
                         </div>
 
