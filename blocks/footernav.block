@@ -15,7 +15,7 @@
 </ul>
 <script>
 $(document).ready(function (){
-    $('social a').each(function () {
+    $('.social a').each(function () {
         var $a = $(this);
         if ($a.attr('href').match(/facebook.com/)) {
             $a.prepend('<i class="fa fa-facebook-f"></i> ');
