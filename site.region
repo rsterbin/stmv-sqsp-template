@@ -58,10 +58,13 @@
                                 <squarespace:navigation navigationId="footerNav" template="footernav" />
                             </div>
                             <div class="small-12 medium-5 columns search">
+                                <!--
                                 <form method="post" action="#">
                                     <label class="icon-only" for="searchbox"><i class="fa fa-search" title="Search"></i></label>
                                     <input type="text" name="q" id="searchbox" />
                                 </form>
+                                -->
+                                <squarespace:block-field id="footerSearchBox" columns="12" />
                             </div>
                         </div>
 
