@@ -22,7 +22,7 @@
     </div>
       {.end}
       {.section externalLink}
-    <div class="row home-big-link">
+    <div class="row home-big-link external-link">
         <a href="{url}">
             <div class="small-5 columns text">
                 <h3>{title}</h3>
