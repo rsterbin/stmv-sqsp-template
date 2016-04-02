@@ -9,14 +9,14 @@
         <a href="{fullUrl}">
             <div class="small-5 columns text">
                 <h3>{navigationTitle}</h3>
-                {if description}
+                {.if description}
                 <p class="tagline">{description}</p>
-                {end}
+                {.end}
             </div>
             <div class="small-7 columns image">
-                {if mainImage}
+                {.if mainImage}
                 <img src="{mainImage.assetUrl}" />
-                {end}
+                {.end}
             </div>
         </a>
     </div>
