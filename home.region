@@ -5,14 +5,7 @@
             <squarespace:block-field id="homeSlideshow" columns="12" />
         </div>
         <div class="small-12 large-4 columns">
-            <div id="home-angelus">
-                <h3>The Angelus</h3>
-                <p class="tagline">The Weekly Newsletter of Saint Mary's</p>
-                <h4>Volume 18, Number 17, March 13, 2016</h4>
-                <p><strong>FROM THE RECTOR: HOLY WEEK 2016</strong></p>
-                <p>Only once in the seventeen years I have been at Saint Mary’s have we been unable to process through Times Square on Palm Sunday. The usual worry is rain. This year, as I write on Friday, March 18, snow is forecast for the afternoon and evening. I have a hunch that it will be all right—and a memorable start to Holy Week. The focus of our worship on Sunday, of course, is not the Liturgy of the Palms. It’s the Eucharist and the proclamation of the passion, this year, from Luke.</p>
-                <div class="read-more"><a class="button hollow" href="#">Read More</a></div>
-            </div>
+            <squarespace:block-field id="homeAngelus" columns="12" />
         </div>
     </div>
 
