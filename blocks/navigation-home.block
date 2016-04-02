@@ -9,7 +9,7 @@
             <div class="small-5 columns text">
                 <h3>{navigationTitle}</h3>
                 {.if description}
-                <p class="tagline">{description}</p>
+                <div class="tagline">{description}</div>
                 {.end}
             </div>
             <div class="small-7 columns image">
