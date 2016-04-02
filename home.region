@@ -76,7 +76,7 @@
 <div class="row" id="top-footer">
     <div class="small-12 columns">
         <h5>{websiteSettings.storeSettings.businessName}</h5>
-        <p class="tagline">{websiteSettings.storeSettings.contactLocation.addressLine1}
+        <p class="tagline" data-content-field="location">{websiteSettings.storeSettings.contactLocation.addressLine1}
             &bull; {websiteSettings.storeSettings.contactLocation.addressLine2}
             &bull; {websiteSettings.contactPhoneNumber}</p>
     </div>
