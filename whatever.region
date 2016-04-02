@@ -1,0 +1,55 @@
+        <section id="content">
+          {.if item}
+            {.section item}
+              {.main-image?}
+                <div class="main-image-wrapper">
+                  <div class="main-image content-fill" data-item-id="{id}" data-content-field="main-image"><img {@|image-meta} /></div>
+                </div>
+              {.end}
+            {.end}
+          {.or}
+            {.section collection}
+              {.equal? typeName "album"}
+              {.or}
+              {.equal? typeName "gallery"}
+              {.or}
+                {.main-image?}
+                  {.section mainImage}
+                  <div class="main-image-wrapper" data-collection-id="{collection.id}" data-edit-main-image="Banner" data-annotation-alignment="bottom left">
+                    <div class="main-image content-fill" data-collection-id="{id}" data-content-field="main-image"><img {@|image-meta} /></div>
+                  </div>
+                  {.end}
+                {.end}
+              {.end}
+              {.end}
+            {.end}
+          {.end}
+        <squarespace:folder-navigation template="foldernav" />
+
+        {.section collection}{.equal? typeName "products"}{.section categories}
+        <div id="categoryNav">
+          <input type="checkbox" name="category-nav-toggle" id="categoryNavToggle" class="category-nav-toggle hidden" />
+          <label for="categoryNavToggle" class="category-nav-toggle-label" onclick></label>
+          <nav class="category-nav">
+            <ul class="category-nav-links">
+              <li class="filter"><a>Filter{.if categoryFilter}: {categoryFilter}{.end}</a></li>
+              <li{.if categoryFilter}{.or} class="active-link all"{.end}><a href="{fullUrl}">All</a></li>
+            {.repeated section @}
+              <li{.equal? categoryFilter @} class="active-link"{.end}><a href="{fullUrl}?category={@|url-encode}">{@}</a></li>
+            {.end}
+            </ul>
+          </nav>
+        </div>
+        {.end}{.end}{.end}
+
+        <div class="content-inner-wrapper">
+          {.section collection}{.equal? typeName "album"}
+              {.or}{.if description || title}<div class="collection-title-desc" data-collection-id="{id}" {.equal? collection.typeName "gallery"}{.or}{.equal? collection.typeName "album"}{.or}data-edit-main-image="Banner"{.end}{.end}>
+            <div class="collection-title-basic"><h1 class="page-title">{title}</h1></div>
+            {.if description}<div class="collection-desc">{description}</div>{.end}{.end}
+          </div>{.end}{.end}
+            <div class="main-content-wrapper" data-content-field="main-content" data-collection-id="{collection.id}" {.equal? collection.typeName "gallery"}{.or}{.equal? collection.typeName "album"}{.or}data-edit-main-image="Banner"{.end}{.end}>
+              {squarespace.main-content}
+            </div>
+        </div>
+        </section>
