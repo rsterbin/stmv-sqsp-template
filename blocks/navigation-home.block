@@ -4,7 +4,6 @@
     <!-- ignoring folder {collection.navigationTitle} -->
     {.or}
       {.section collection}
-    <li class="{.if active} active{.end}"><a href="{fullUrl}"></a></li>
     <div class="row home-big-link">
         <a href="{fullUrl}">
             <div class="small-5 columns text">
