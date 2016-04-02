@@ -41,32 +41,10 @@
             </div>
         </div>
         <div class="small-12 medium-6 large-5 columns" id="home-big-links">
-            <div>
-                <div class="row home-big-link">
-                    <a href="#">
-                        <div class="small-5 columns text">
-                            <h3>Upcoming Events</h3>
-                        </div>
-                        <div class="small-7 columns image">
-                            <img src="inc/site/images/easter.jpg" />
-                        </div>
-                    </a>
-                </div>
-                <div class="row home-big-link">
-                    <a href="#">
-                        <div class="small-5 columns text">
-                            <h3>Open Doors</h3>
-                            <p class="tagline">The Campaign for the Church of Saint Mary the Virgin</p>
-                        </div>
-                        <div class="small-7 columns image">
-                            <img src="inc/site/images/christ_the_king.jpg" />
-                        </div>
-                    </a>
-                </div>
-                <div class="row focus">
-                    <div class="small-10 medium-12 large-10 columns">
-                        <p><span>Our doors have been open daily</span> for welcome and worship since December 8, 1870. All are welcome. Our members and friends now live both near and far from Times Square. We invite you to join us.</p>
-                    </div>
+            <squarespace:navigation navigationId="homeNav" template="navigation-home" />
+            <div class="row focus">
+                <div class="small-10 medium-12 large-10 columns">
+                    <p><span>Our doors have been open daily</span> for welcome and worship since December 8, 1870. All are welcome. Our members and friends now live both near and far from Times Square. We invite you to join us.</p>
                 </div>
             </div>
         </div>

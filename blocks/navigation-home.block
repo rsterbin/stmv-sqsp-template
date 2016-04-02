@@ -1,0 +1,37 @@
+{.section items}
+  {.repeated section @}
+    {.folder?}
+    <!-- ignoring folder {collection.navigationTitle} -->
+    {.or}
+      {.section collection}
+    <li class="{.if active} active{.end}"><a href="{fullUrl}"></a></li>
+    <div class="row home-big-link">
+        <a href="{fullUrl}">
+            <div class="small-5 columns text">
+                <h3>{navigationTitle}</h3>
+                {if description}
+                <p class="tagline">{description}</p>
+                {end}
+            </div>
+            <div class="small-7 columns image">
+                {if mainImage}
+                <img src="{mainImage.assetUrl}" />
+                {end}
+            </div>
+        </a>
+    </div>
+      {.end}
+      {.section externalLink}
+    <div class="row home-big-link">
+        <a href="{url}">
+            <div class="small-5 columns text">
+                <h3>{title}</h3>
+            </div>
+            <div class="small-7 columns image"></div>
+        </a>
+    </div>
+      {.end}
+    {.end}
+  {.end}
+{.end}
+
