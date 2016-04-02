@@ -34,8 +34,8 @@
                                     <div class="title-bar-title">Menu</div>
                                 </div>
 
-                                <h1><a href="/">{website.siteTitle}</a></h1>
-                                <h2>{website.siteTagLine}</h2>
+                                <h1><a href="/" data-content-field="site-title">{website.siteTitle}</a></h1>
+                                <h2 data-content-field="site-tag-line">{website.siteTagLine}</h2>
                             </div>
 
                             <div class="small-12 columns menu-centered show-for-medium" id="nav">
