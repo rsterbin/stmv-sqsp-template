@@ -2,23 +2,7 @@
 
     <div class="row" id="home-top">
         <div class="small-12 large-8 columns">
-            <div class="owl-carousel" id="homecarousel">
-                <div class="fill-item" style="background-image: url(inc/site/images/home-slideshow/1.jpg)">
-                    <a href="#" class="caption">Around the Parish <button class="button hollow small caption-tag">About</button></a>
-                </div>
-                <div class="fill-item" style="background-image: url(inc/site/images/home-slideshow/2.jpg)">
-                    <a href="#" class="caption">Music at Saint Mary's <button class="button hollow small caption-tag">Music</button></a>
-                </div>
-                <div class="fill-item" style="background-image: url(inc/site/images/home-slideshow/3.jpg)">
-                    <a href="#" class="caption">Join the Flower Guild <button class="button hollow small caption-tag">Volunteer</button></a>
-                </div>
-                <div class="fill-item" style="background-image: url(inc/site/images/home-slideshow/4.jpg)">
-                    <a href="#" class="caption">Virtual Tour of the Building <button class="button hollow small caption-tag">History</button></a>
-                </div>
-                <div class="fill-item" style="background-image: url(inc/site/images/home-slideshow/5.jpg)">
-                    <a href="#" class="caption">Worship Schedule for Holy Week, 2016 <button class="button hollow small caption-tag">Worship</button></a>
-                </div>
-            </div>
+            <squarespace:block-field id="homeSlideshow" columns="12" />
         </div>
         <div class="small-12 large-4 columns">
             <div id="home-angelus">

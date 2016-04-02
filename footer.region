@@ -14,23 +14,7 @@
         </div><!-- end off-canvas-wrapper -->
 
         <script>
-            function cropImages(id) {
-                var width  = $('#' + id).width(),
-                    height = width * 0.75;
-                $('#' + id + ' .fill-item').css('height', height + 'px');
-            }
             $(document).foundation();
-            $(document).ready(function (){
-                $(".owl-carousel").owlCarousel({
-                    singleItem: true,
-                    autoPlay: true,
-                    navigation: true,
-                    navigationText: [ '&#x00ab;', '&#x00bb;' ],
-                    pagination: false,
-                    afterInit: function() { cropImages('homecarousel'); },
-                    afterUpdate: function() { cropImages('homecarousel'); }
-                });
-            });
         </script>
 
     </body>
