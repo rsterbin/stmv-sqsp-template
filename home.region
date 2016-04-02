@@ -75,8 +75,10 @@
 
 <div class="row" id="top-footer">
     <div class="small-12 columns">
-        <h5>The Church of Saint Mary the Virgin</h5>
-        <p class="tagline">145 West 46th Street &bull; New York City 10036-8502 &bull; 212.869.5830</p>
+        <h5>{websiteSettings.storeSettings.businessName}</h5>
+        <p class="tagline">{websiteSettings.storeSettings.contactLocation.addressLine1}
+            &bull; {websiteSettings.storeSettings.contactLocation.addressLine1}
+            &bull; {websiteSettings.contactPhoneNumber}</p>
     </div>
 </div>
 
