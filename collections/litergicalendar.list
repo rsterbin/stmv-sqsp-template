@@ -1,7 +1,7 @@
 {.repeated section items}
 <div><pre style="color: blue;">console.log({@|json-pretty})</pre></div>
-<div class="liturgical-calendar-day{.repeated section tags} {@|url-encode}{.end}">
-    <h3>{title}</h3>
+<div class="liturgical-calendar-day{.repeated section tags} {@|url-encode|htmlattr}{.end}">
+    <h3><a href="{fullUrl|htmlattr}">{title|htmltag}</a></h3>
     <h4>{startDate|date %A, %B %e, %Y}</h4>
     {body}
 </div>
