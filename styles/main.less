@@ -269,23 +269,20 @@ body.default-interior #main {
     padding-bottom: 1em;
 }
 
-#home-services h3 {
+#home-services .summary-title {
     font-weight: bold;
     font-size: 1.875em;
 }
 
-.service .notes {
-    font-style: italic;
-    color: #333;
+#home-services .summary-excerpt {
+    font-size: 1em;
 }
 
-.no-service {
-    font-style: italic;
-    font-weight: bold;
-}
-
-#home-services h5 {
+#home-services blockquote {
     color: #a44339;
+    padding: 0;
+    border: none;
+    font-size: 1.25em;
 }
 
 #home-big-links .home-big-link {
@@ -325,25 +322,6 @@ body.default-interior #main {
 
 .focus .columns p span {
     font-size: 1.25em;
-}
-
-#home-bottom.rearranged,
-#home-services.rearranged,
-.home-big-link.rearranged {
-    background-color: #f6efcb;
-}
-
-.home-big-link.rearranged {
-    border: none;
-    padding-top: 1em;
-}
-
-.home-big-link.rearranged .text {
-    padding: 0 1em;
-}
-
-.home-big-link.rearranged .image {
-    padding-right: 0.9375rem;
 }
 
 #top-footer {
@@ -482,20 +460,25 @@ body.default-interior #main {
     margin: 1em 0 0.5em 0;
 }
 
-.liturgical-layout-full {
+.liturgical-layout-full,
+.liturgical-layout-full .summary-title,
+.liturgical-layout-full .summary-excerpt {
     text-align: center;
 }
 
-.liturgical-layout-full .sqs-block-content ul {
+.liturgical-layout-full .sqs-block-content ul,
+.liturgical-layout-full .summary-excerpt ul {
     list-style: none;
     margin-left: 0;
 }
 
-.liturgical-layout-full .sqs-block-content > ul > li {
+.liturgical-layout-full .sqs-block-content > ul > li,
+.liturgical-layout-full .summary-excerpt > ul > li {
     margin-bottom: 1em;
 }
 
-.liturgical-layout-full .sqs-block-content > ul > li > ul > li {
+.liturgical-layout-full .sqs-block-content > ul > li > ul > li,
+.liturgical-layout-full .summary-excerpt > ul > li > ul > li {
     font-style: italic;
 }
 
