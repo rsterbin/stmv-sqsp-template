@@ -10,41 +10,14 @@
     </div>
 
     <div class="row" id="home-bottom">
-        <div class="small-12 medium-6 large-7 columns" id="home-services">
-            <div>
-                <h3>Sunday of the Passion: Palm Sunday</h3>
-
-                <h4>Saturday, March 19, 2016</h4>
-
-                <p class="service">Liturgy of the Palms &amp; Sung Mass <span class="time">5:00 PM</span><br />
-                <span class="notes">Sermon by the Reverend Stephen Gerth</span></p>
-
-                <h4>Sunday, March 20, 2016</h4>
-
-                <p class="service">Sung Matins <span class="time">8:30 AM</span></p>
-                 
-
-                <p class="service">Liturgy of the Palms &amp; Mass <span class="time">9:00 AM</span><br />
-                <span class="notes">Sermon by the Reverend Stephen Gerth</span></p>
-
-                <p class="no-service">There is no celebration of the Mass at 10:00 AM today.</p>
-
-                <p class="service">Liturgy of the Palms, Procession through Times Square &amp; Solemn Mass <span class="time">11:00 AM</span><br />
-                <span class="notes">Sermon by the Reverend Stephen Gerth</span><br />
-                <span class="notes">Missa in die Tribulationis &mdash; Robinson (1943–2015)</span><br />
-                <span class="notes">Hosanna to the Son of David &mdash; Weelkes (1576–1623)</span></p>
-
-                <p class="service">Solemn Evensong &amp; Benediction <span class="time">5:00 PM</span><br />
-                <span class="notes">Sermon by the Reverend Dr. James C. Pace</span></p>
-
-                <h5>St. Mary's is open and the regular services of the church are offered daily.</h5>
-            </div>
+        <div class="small-12 medium-6 large-7 columns liturgical-layout-full" id="home-services">
+            <squarespace:block-field id="homeServices" columns="12" />
         </div>
         <div class="small-12 medium-6 large-5 columns" id="home-big-links">
             <squarespace:navigation navigationId="homeNav" template="navigation-home" />
             <div class="row focus">
                 <div class="small-10 medium-12 large-10 columns">
-                    <p><span>Our doors have been open daily</span> for welcome and worship since December 8, 1870. All are welcome. Our members and friends now live both near and far from Times Square. We invite you to join us.</p>
+                    <squarespace:block-field id="homeFocus" columns="12" />
                 </div>
             </div>
         </div>
