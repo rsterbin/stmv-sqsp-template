@@ -9,15 +9,19 @@
         </div>
     </div>
 
-    <div class="row" id="home-bottom">
-        <div class="small-12 medium-6 large-7 columns liturgical-layout-full" id="home-services">
-            <squarespace:block-field id="homeServices" columns="12" />
+    <div class="row" data-equalizer data-equalize-on="medium" id="home-bottom">
+        <div class="small-12 medium-6 large-7 columns" id="home-services">
+            <div class="liturgical-layout-full" data-equalizer-watch>
+                <squarespace:block-field id="homeServices" columns="12" />
+            </div>
         </div>
         <div class="small-12 medium-6 large-5 columns" id="home-big-links">
-            <squarespace:navigation navigationId="homeNav" template="navigation-home" />
-            <div class="row focus">
-                <div class="small-10 medium-12 large-10 columns">
-                    <squarespace:block-field id="homeFocus" columns="12" />
+            <div data-equalizer-watch>
+                <squarespace:navigation navigationId="homeNav" template="navigation-home" />
+                <div class="row focus">
+                    <div class="small-10 medium-12 large-10 columns">
+                        <squarespace:block-field id="homeFocus" columns="12" />
+                    </div>
                 </div>
             </div>
         </div>
