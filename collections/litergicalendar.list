@@ -21,7 +21,7 @@
   {.var @itemDay startDate|date %e}
   <!-- {@itemDay} -->
   <!-- {currentDay} -->
-  {.equal currentDay @itemDay}
+  {.equal?:currentDay:@itemDay}
   {.else}
     {.equal currentDay empty}
     {.else}
