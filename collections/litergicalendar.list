@@ -29,7 +29,7 @@
     {.if @currentDay}
       {.var @doEndWrapper @proxyTrue}
     {.or}
-      {.var @doEndWrapper @proxyFalse}
+      {.var @doEndWrapper @proxyTrue}
     {.end}
   {.end}
 
