@@ -61,9 +61,9 @@ $(document).ready(function (){
             $calday.attr('id', 'calday_' + date);
             $calday.find('.number').text(number);
             $calday.find('.weekday').text(weekday);
-            $('#services').prepend($calday);
+            $('#calendarbox').prepend($calday);
         }
-        var $block = $('#services #calday_' + date + ' .day-services');
+        var $block = $('#calendarbox #calday_' + date + ' .day-services');
         $block.prepend($service);
         // $service.remove();
     });
