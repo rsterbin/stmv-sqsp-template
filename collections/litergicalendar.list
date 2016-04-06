@@ -21,9 +21,9 @@
 <div class="row column" id="services">
 {.repeated section items}
     <div class="service{.repeated section tags} {@|url-encode|htmlattr}{.end}">
-        <div class="service-day-ymd">{startDate|date %F}</span>
-        <div class="service-day-number">{startDate|date %e}</span>
-        <div class="service-day-weekday">{startDate|date %A}</span>
+        <div class="service-day-ymd">{startDate|date %F}</div>
+        <div class="service-day-number">{startDate|date %e}</div>
+        <div class="service-day-weekday">{startDate|date %A}</div>
         <div class="title"><a href="{fullUrl|htmlattr}">{title|htmltag}</a></div>
         <div class="excerpt">
             {body}
