@@ -76,6 +76,17 @@
                     {.or}
                     <!-- @doEndWrapper: false -->
                     {.end}
+
+                    {.if @proxyTrue}
+                    <!-- @proxyTrue: true -->
+                    {.or}
+                    <!-- @proxyTrue: false -->
+                    {.end}
+                    {.if @proxyFalse}
+                    <!-- @proxyFalse: true -->
+                    {.or}
+                    <!-- @proxyFalse: false -->
+                    {.end}
 {.end}
 
 {# If currentDay is still empty, no need to close the last item in the loop }
