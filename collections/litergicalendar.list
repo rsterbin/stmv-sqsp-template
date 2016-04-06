@@ -1,9 +1,4 @@
-{.var @proxyTrue website.developerMode}
-{.var @proxyFalse websiteSettings.storeSettings.showCustomCheckoutForm}
-
-{.var @currentDay @proxyFalse}
 {.var @firstDate items.0.startDate}
-{.var @firstItem @proxyTrue}
 
 <div><pre style="color: blue;">console.log({@|json-pretty})</pre></div>
 
@@ -21,79 +16,57 @@
     </div>
 </div>
 
+<div id="calendarbox"></div>
+
+<div class="row column" id="services">
 {.repeated section items}
-  {.var @itemDay startDate|date %F}
-
-  {.equal?:@currentDay:@itemDay}
-    {.var @doStartWrapper @proxyFalse}
-    {.var @doEndWrapper @proxyFalse}
-  {.or}
-    {.var @doStartWrapper @proxyTrue}
-    {.if @firstItem}
-      {.var @doEndWrapper @proxyFalse}
-    {.or}
-      {.var @doEndWrapper @proxyTrue}
-    {.end}
-  {.end}
-
-  {.var @firstItem proxyFalse}
-  {.var @currentDay startDate|date %F}
-
-  {.if @doEndWrapper}
-                </div>
-            </div>
+    <div class="service{.repeated section tags} {@|url-encode|htmlattr}{.end}">
+        <div class="service-day-ymd">{startDate|date %F}</span>
+        <div class="service-day-number">{startDate|date %e}</span>
+        <div class="service-day-weekday">{startDate|date %A}</span>
+        <div class="title"><a href="{fullUrl|htmlattr}">{title|htmltag}</a></div>
+        <div class="excerpt">
+            {body}
         </div>
     </div>
-</div>
-  {.end}
-
-  {.if @doStartWrapper}
-<div class="row">
-    <div class="large-8 large-centered columns">
-        <div class="lcal-month-day">
-            <div class="row">
-                <div class="small-12 medium-2 columns">
-                    <div class="calendar-date">
-                        <span class="badge number">{startDate|date %e}</span>
-                        <span class="weekday">{startDate|date %A}</span>
-                    </div>
-                </div>
-                <div class="small-12 medium-10 columns">
-  {.end}
-
-                    <div class="service{.repeated section tags} {@|url-encode|htmlattr}{.end}">
-                        <div class="title"><a href="{fullUrl|htmlattr}">{title|htmltag}</a></div>
-                        <div class="excerpt">
-                            {body}
-                        </div>
-                    </div>
-
-                    <!-- {@itemDay} -->
-                    <!-- {@currentDay} -->
-                    {.if @doStartWrapper}
-                    <!-- @doStartWrapper: true -->
-                    {.or}
-                    <!-- @doStartWrapper: false -->
-                    {.end}
-                    {.if @doEndWrapper}
-                    <!-- @doEndWrapper: true -->
-                    {.or}
-                    <!-- @doEndWrapper: false -->
-                    {.end}
-                    {.if @firstItem}
-                    <!-- @firstItem: true -->
-                    {.or}
-                    <!-- @firstItem: false -->
-                    {.end}
 {.end}
-
-{# If currentDay is still empty, no need to close the last item in the loop }
-{.if @currentDay}
-{.or}
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-{.end}
+
+<script type="text/javascript">
+$(document).ready(function (){
+    var mday_tpl = '<div class="row">' +
+        '    <div class="large-8 large-centered columns">' +
+        '        <div class="lcal-month-day">' +
+        '            <div class="row">' +
+        '                <div class="small-12 medium-2 columns">' +
+        '                    <div class="calendar-date">' +
+        '                        <span class="badge number"></span>' +
+        '                        <span class="weekday"></span>' +
+        '                    </div>' +
+        '                </div>' +
+        '                <div class="small-12 medium-10 columns day-services">' +
+        '                </div>' +
+        '            </div>' +
+        '        </div>' +
+        '    </div>' +
+        '</div>';
+    var found = {};
+    $('#services > .service').each(function() {
+        var $service = $(this),
+            date = $service.find('.service-day-ymd'),
+            number = $service.find('.service-day-number'),
+            weekday = $service.find('.service-day-weekday');
+        if (!(date) in found) {
+            var $calday = $(mday_tpl);
+            $calday.attr('id', 'calday_' + date);
+            $calday.find('.number').text(number);
+            $calday.find('.weekday').text(weekday);
+            $('#services').prepend($calday);
+        }
+        var $block = $('#services #calday_' + date + ' .day-services');
+        $block.prepend($service);
+        // $service.remove();
+    });
+});
+</script>
 
