@@ -19,19 +19,29 @@
 
 {.repeated section items}
   {.var @itemDay startDate|date %e}
-  {.var @currentDay startDate|date %A}
   {.equal?:@currentDay:@itemDay}
+    {.var @doStartWrapper false}
+    {.var @doEndWrapper false}
   {.or}
+    {.var @doDoStartWrapper true}
     {.equal?:@currentDay:empty}
-      {.var @currentDay startDate|date %B}
+      {.var @doEndWrapper true}
     {.or}
-      {.var @currentDay startDate|date %a}
+      {.var @doEndWrapper false}
+    {.end}
+  {.end}
+
+  {.var @currentDay startDate|date %B}
+
+  {.if @doEndWrapper}
                 </div>
             </div>
         </div>
     </div>
 </div>
-    {.end}
+  {.end}
+
+  {.if @doStartWrapper}
 <div class="row">
     <div class="large-8 large-centered columns">
         <div class="lcal-month-day">
@@ -44,15 +54,16 @@
                 </div>
                 <div class="small-12 medium-10 columns">
   {.end}
+
                     <div class="service{.repeated section tags} {@|url-encode|htmlattr}{.end}">
                         <div class="title"><a href="{fullUrl|htmlattr}">{title|htmltag}</a></div>
                         <div class="excerpt">
                             {body}
                         </div>
                     </div>
-  <!-- {@itemDay} -->
-  <!-- {@currentDay} -->
 {.end}
+
+{# If currentDay is still empty, no need to close the last item in the loop }
 {.equal?:@currentDay:empty}
 {.or}
                 </div>
