@@ -1,5 +1,7 @@
-{.repeated section items}
+{.section collection}
 <div><pre style="color: blue;">console.log({@|json-pretty})</pre></div>
+{.end}
+{.repeated section items}
 <div class="liturgical-layout-full">
     <div class="liturgical-calendar-day{.repeated section tags} {@|url-encode|htmlattr}{.end}">
         <h3><a href="{fullUrl|htmlattr}">{title|htmltag}</a></h3>
