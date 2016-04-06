@@ -19,6 +19,7 @@
 {.var @proxyFalse websiteSettings.storeSettings.showCustomCheckoutForm}
 
 {.var @currentDay @proxyFalse}
+{.var @firstOne @proxyTrue}
 
 {.repeated section items}
   {.var @itemDay startDate|date %F}
@@ -27,7 +28,7 @@
     {.var @doEndWrapper @proxyFalse}
   {.or}
     {.var @doStartWrapper @proxyTrue}
-    {.equal?:@currentDay:@proxyFalse}
+    {.if @firstOne}
       {.var @doEndWrapper @proxyFalse}
     {.or}
       {.var @doEndWrapper @proxyTrue}
@@ -35,6 +36,7 @@
   {.end}
 
   {.var @currentDay startDate|date %F}
+  {.var @firstOne proxyFalse}
 
   {.if @doEndWrapper}
                 </div>
