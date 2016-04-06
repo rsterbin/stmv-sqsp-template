@@ -15,7 +15,7 @@
     </div>
 </div>
 
-{.var @currentDay empty}
+{.var @currentDay @proxyFalse}
 {.var @proxyTrue website.developerMode}
 {.var @proxyFalse websiteSettings.storeSettings.showCustomCheckoutForm}
 
@@ -26,10 +26,10 @@
     {.var @doEndWrapper @proxyFalse}
   {.or}
     {.var @doDoStartWrapper @proxyTrue}
-    {.equal?:@currentDay:empty}
-      {.var @doEndWrapper @proxyFalse}
-    {.or}
+    {.if @currentDay}
       {.var @doEndWrapper @proxyTrue}
+    {.or}
+      {.var @doEndWrapper @proxyFalse}
     {.end}
   {.end}
 
@@ -90,7 +90,7 @@
 {.end}
 
 {# If currentDay is still empty, no need to close the last item in the loop }
-{.equal?:@currentDay:empty}
+{.if @currentDay}
 {.or}
                 </div>
             </div>
