@@ -1,5 +1,11 @@
-<div><pre style="color: blue;">console.log({@|json-pretty})</pre></div>
+{.var @proxyTrue website.developerMode}
+{.var @proxyFalse websiteSettings.storeSettings.showCustomCheckoutForm}
+
+{.var @currentDay @proxyFalse}
 {.var @firstDate items.0.startDate}
+{.var @firstItem @proxyTrue}
+
+<div><pre style="color: blue;">console.log({@|json-pretty})</pre></div>
 
 <div class="row column subtitle">
     <h3>Monthly Worship Schedule: {@firstDate|date %B %Y}</h3>
@@ -15,27 +21,22 @@
     </div>
 </div>
 
-{.var @proxyTrue website.developerMode}
-{.var @proxyFalse websiteSettings.storeSettings.showCustomCheckoutForm}
-
-{.var @currentDay @proxyFalse}
-{.var @firstOne @proxyTrue}
-
 {.repeated section items}
   {.var @itemDay startDate|date %F}
+
   {.equal?:@currentDay:@itemDay}
     {.var @doStartWrapper @proxyFalse}
     {.var @doEndWrapper @proxyFalse}
   {.or}
     {.var @doStartWrapper @proxyTrue}
-    {.if @firstOne}
+    {.if @firstItem}
       {.var @doEndWrapper @proxyFalse}
     {.or}
       {.var @doEndWrapper @proxyTrue}
     {.end}
   {.end}
 
-  {.var @firstOne proxyFalse}
+  {.var @firstItem proxyFalse}
   {.var @currentDay startDate|date %F}
 
   {.if @doEndWrapper}
@@ -79,10 +80,10 @@
                     {.or}
                     <!-- @doEndWrapper: false -->
                     {.end}
-                    {.if @firstOne}
-                    <!-- @firstOne: true -->
+                    {.if @firstItem}
+                    <!-- @firstItem: true -->
                     {.or}
-                    <!-- @firstOne: false -->
+                    <!-- @firstItem: false -->
                     {.end}
 {.end}
 
