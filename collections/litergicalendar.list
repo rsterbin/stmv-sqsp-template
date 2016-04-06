@@ -25,16 +25,15 @@
   {.equal?:@currentDay:@itemDay}
   {.or}
     {.equal?:@currentDay:empty}
+      {.var @currentDay startDate|date %B}
     {.or}
-  {.var @currentDay startDate|date %A}
+      {.var @currentDay startDate|date %Z}
                 </div>
             </div>
         </div>
     </div>
 </div>
-  {.var @currentDay startDate|date %B}
     {.end}
-    {.var @currentDay startDate|date %e}
 <div class="row">
     <div class="large-8 large-centered columns">
         <div class="lcal-month-day">
