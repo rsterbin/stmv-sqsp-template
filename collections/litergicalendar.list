@@ -61,6 +61,11 @@
                             {body}
                         </div>
                     </div>
+
+                    <!-- {@itemDay} -->
+                    <!-- {@currentDay} -->
+                    <!-- {@doStartWrapper} -->
+                    <!-- {@doEndWrapper} -->
 {.end}
 
 {# If currentDay is still empty, no need to close the last item in the loop }
