@@ -19,6 +19,8 @@
 
 {.repeated section items}
   {.var @itemDay startDate|date %e}
+  <!-- {@itemDay} -->
+  <!-- {currentDay} -->
   {.equal currentDay @itemDay}
   {.else}
     {.equal currentDay empty}
