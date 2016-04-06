@@ -15,9 +15,9 @@
     </div>
 </div>
 
-{.var @currentDay @proxyFalse}
 {.var @proxyTrue website.developerMode}
 {.var @proxyFalse websiteSettings.storeSettings.showCustomCheckoutForm}
+{.var @currentDay @proxyFalse}
 
 {.repeated section items}
   {.var @itemDay startDate|date %F}
