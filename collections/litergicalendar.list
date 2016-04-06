@@ -21,9 +21,11 @@
 <div class="row column" id="services">
 {.repeated section items}
     <div class="service{.repeated section tags} {@|url-encode|htmlattr}{.end}">
-        <div class="service-day-ymd">{startDate|date %F}</div>
-        <div class="service-day-number">{startDate|date %e}</div>
-        <div class="service-day-weekday">{startDate|date %A}</div>
+        <div class="date">
+            <div class="service-day-ymd">{startDate|date %F}</div>
+            <span class="service-day-number badge number">{startDate|date %e}</span>
+            <span class="service-day-weekday weekday">{startDate|date %A}</span>
+        </div>
         <div class="title"><a href="{fullUrl|htmlattr}">{title|htmltag}</a></div>
         <div class="excerpt">
             {body}
@@ -62,9 +64,10 @@ $(document).ready(function (){
             $calday.find('.number').text(number);
             $calday.find('.weekday').text(weekday);
             $('#calendarbox').prepend($calday);
+            found[date] = true;
         }
-        var $block = $('#calendarbox #calday_' + date + ' .day-services');
-        $block.prepend($service);
+        // var $block = $('#calendarbox #calday_' + date + ' .day-services');
+        // $block.prepend($service);
         // $service.remove();
     });
 });
