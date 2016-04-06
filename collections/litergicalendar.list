@@ -32,6 +32,7 @@
         </div>
     </div>
 </div>
+  {.var @currentDay startDate|date %B}
     {.end}
     {.var @currentDay startDate|date %e}
 <div class="row">
