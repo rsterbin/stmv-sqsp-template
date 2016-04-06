@@ -20,14 +20,14 @@
 {.repeated section items}
   {.var @itemDay startDate|date %F}
   {.equal?:@currentDay:@itemDay}
-    {.var @doStartWrapper false}
-    {.var @doEndWrapper false}
+    {.var @doStartWrapper 0}
+    {.var @doEndWrapper 0}
   {.or}
-    {.var @doDoStartWrapper true}
+    {.var @doDoStartWrapper 1}
     {.equal?:@currentDay:empty}
-      {.var @doEndWrapper true}
+      {.var @doEndWrapper 1}
     {.or}
-      {.var @doEndWrapper false}
+      {.var @doEndWrapper 0}
     {.end}
   {.end}
 
