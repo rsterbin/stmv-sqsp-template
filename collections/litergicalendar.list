@@ -1,5 +1,5 @@
 <div><pre style="color: blue;">console.log({@|json-pretty})</pre></div>
-{.var @firstDate items.0}
+{.var @firstDate items.0.startDate}
 
 <div class="row column subtitle">
     <h3>Monthly Worship Schedule: {@firstDate|date %B %Y}</h3>
@@ -18,7 +18,8 @@
 {.var @currentDay empty}
 
 {.repeated section items}
-  {.equals currentDay startDate|date %e}
+  {.var @itemDay startDate|date %e}
+  {.equals currentDay @itemDay}
   {.else}
     {.equals currentDay empty}
     {.else}
