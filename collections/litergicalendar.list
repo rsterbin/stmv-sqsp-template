@@ -16,6 +16,7 @@
 </div>
 
 {.var @currentDay empty}
+{.var @currentDay items.0.startDate|date %A}
 
 {.repeated section items}
   {.var @itemDay startDate|date %e}
@@ -31,7 +32,7 @@
     </div>
 </div>
     {.end}
-    {.var @currentDay startDate}
+    {.var @currentDay startDate|date %e}
 <div class="row">
     <div class="large-8 large-centered columns">
         <div class="lcal-month-day">
