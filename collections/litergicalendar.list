@@ -35,8 +35,8 @@
     {.end}
   {.end}
 
-  {.var @currentDay startDate|date %F}
   {.var @firstOne proxyFalse}
+  {.var @currentDay startDate|date %F}
 
   {.if @doEndWrapper}
                 </div>
