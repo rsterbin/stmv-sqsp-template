@@ -19,9 +19,9 @@
 
 {.repeated section items}
   {.var @itemDay startDate|date %e}
-  {.equals currentDay @itemDay}
+  {.equal currentDay @itemDay}
   {.else}
-    {.equals currentDay empty}
+    {.equal currentDay empty}
     {.else}
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         </div>
                     </div>
 {.end}
-{.equals currentDay empty}
+{.equal currentDay empty}
 {.else}
                 </div>
             </div>
