@@ -22,10 +22,10 @@
 {.repeated section items}
   {.var @itemDay startDate|date %F}
   {.equal?:@currentDay:@itemDay}
-    {.var @doStartWrapper @proxyTrue}
-    {.var @doEndWrapper @proxyTrue}
+    {.var @doStartWrapper @proxyFalse}
+    {.var @doEndWrapper @proxyFalse}
   {.or}
-    {.var @doDoStartWrapper @proxyTrue}
+    {.var @doStartWrapper @proxyTrue}
     {.if @currentDay}
       {.var @doEndWrapper @proxyTrue}
     {.or}
