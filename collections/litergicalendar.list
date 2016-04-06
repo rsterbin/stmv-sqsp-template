@@ -17,6 +17,7 @@
 
 {.var @proxyTrue website.developerMode}
 {.var @proxyFalse websiteSettings.storeSettings.showCustomCheckoutForm}
+
 {.var @currentDay @proxyFalse}
 
 {.repeated section items}
@@ -26,7 +27,7 @@
     {.var @doEndWrapper @proxyFalse}
   {.or}
     {.var @doStartWrapper @proxyTrue}
-    {.equal?:@currentDay:@proxyFalse}
+    {.if @currentDay}
       {.var @doEndWrapper @proxyTrue}
     {.or}
       {.var @doEndWrapper @proxyFalse}
