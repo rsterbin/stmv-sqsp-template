@@ -22,8 +22,8 @@
 {.repeated section items}
   {.var @itemDay startDate|date %F}
   {.equal?:@currentDay:@itemDay}
-    {.var @doStartWrapper @proxyFalse}
-    {.var @doEndWrapper @proxyFalse}
+    {.var @doStartWrapper @proxyTrue}
+    {.var @doEndWrapper @proxyTrue}
   {.or}
     {.var @doDoStartWrapper @proxyTrue}
     {.if @currentDay}
@@ -75,17 +75,6 @@
                     <!-- @doEndWrapper: true -->
                     {.or}
                     <!-- @doEndWrapper: false -->
-                    {.end}
-
-                    {.if @proxyTrue}
-                    <!-- @proxyTrue: true -->
-                    {.or}
-                    <!-- @proxyTrue: false -->
-                    {.end}
-                    {.if @proxyFalse}
-                    <!-- @proxyFalse: true -->
-                    {.or}
-                    <!-- @proxyFalse: false -->
                     {.end}
 {.end}
 
