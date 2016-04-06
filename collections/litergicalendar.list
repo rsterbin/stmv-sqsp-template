@@ -16,24 +16,26 @@
 </div>
 
 {.var @currentDay empty}
+{.var @proxyTrue website.developerMode}
+{.var @proxyFalse websiteSettings.storeSettings.showCustomCheckoutForm}
 
 {.repeated section items}
   {.var @itemDay startDate|date %F}
   {.equal?:@currentDay:@itemDay}
-    {.var @doStartWrapper "false"}
-    {.var @doEndWrapper "false"}
+    {.var @doStartWrapper @proxyFalse}
+    {.var @doEndWrapper @proxyFalse}
   {.or}
-    {.var @doDoStartWrapper "true"}
+    {.var @doDoStartWrapper @proxyTrue}
     {.equal?:@currentDay:empty}
-      {.var @doEndWrapper "false"}
+      {.var @doEndWrapper @proxyFalse}
     {.or}
-      {.var @doEndWrapper "true"}
+      {.var @doEndWrapper @proxyTrue}
     {.end}
   {.end}
 
   {.var @currentDay startDate|date %F}
 
-  {.equal?:@doEndWrapper:"true"}
+  {.if @doEndWrapper}
                 </div>
             </div>
         </div>
@@ -41,7 +43,7 @@
 </div>
   {.end}
 
-  {.equal?:@doStartWrapper:"true"}
+  {.if @doStartWrapper}
 <div class="row">
     <div class="large-8 large-centered columns">
         <div class="lcal-month-day">
@@ -64,8 +66,16 @@
 
                     <!-- {@itemDay} -->
                     <!-- {@currentDay} -->
-                    <!-- {@doStartWrapper} -->
-                    <!-- {@doEndWrapper} -->
+                    {.if @doStartWrapper}
+                    <!-- @doStartWrapper: true -->
+                    {.or}
+                    <!-- @doStartWrapper: false -->
+                    {.end}
+                    {.if @doEndWrapper}
+                    <!-- @doEndWrapper: true -->
+                    {.or}
+                    <!-- @doEndWrapper: false -->
+                    {.end}
 {.end}
 
 {# If currentDay is still empty, no need to close the last item in the loop }
