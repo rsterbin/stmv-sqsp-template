@@ -20,13 +20,13 @@
 
 {.repeated section items}
   {.var @itemDay startDate|date %e}
-  {.var @currentDay startDate|date %A}
   <!-- {@itemDay} -->
   <!-- {@currentDay} -->
   {.equal?:@currentDay:@itemDay}
   {.or}
     {.equal?:@currentDay:empty}
     {.or}
+  {.var @currentDay startDate|date %A}
                 </div>
             </div>
         </div>
