@@ -31,6 +31,7 @@
     </div>
 </div>
     {.end}
+    {.var @currentDay startDate|date %e}
 <div class="row">
     <div class="large-8 large-centered columns">
         <div class="lcal-month-day">
@@ -49,7 +50,7 @@
                             {body}
                         </div>
                     </div>
-  {.var @currentDay startDate|date %e}
+  {.var @currentDay items.0.startDate|date %A}
 {.end}
 {.equal?:@currentDay:empty}
 {.or}
