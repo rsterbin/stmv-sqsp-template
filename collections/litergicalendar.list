@@ -79,6 +79,11 @@
                     {.or}
                     <!-- @doEndWrapper: false -->
                     {.end}
+                    {.if @firstOne}
+                    <!-- @firstOne: true -->
+                    {.or}
+                    <!-- @firstOne: false -->
+                    {.end}
 {.end}
 
 {# If currentDay is still empty, no need to close the last item in the loop }
