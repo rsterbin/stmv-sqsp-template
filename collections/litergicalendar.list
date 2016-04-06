@@ -49,6 +49,7 @@
                             {body}
                         </div>
                     </div>
+  {.var @currentDay startDate|date %e}
 {.end}
 {.equal?:@currentDay:empty}
 {.or}
