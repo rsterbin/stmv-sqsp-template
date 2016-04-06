@@ -53,9 +53,9 @@ $(document).ready(function (){
     var found = {};
     $('#services > .service').each(function() {
         var $service = $(this),
-            date = $service.find('.service-day-ymd'),
-            number = $service.find('.service-day-number'),
-            weekday = $service.find('.service-day-weekday');
+            date = $service.find('.service-day-ymd').text(),
+            number = $service.find('.service-day-number').text(),
+            weekday = $service.find('.service-day-weekday').text();
         if (!(date) in found) {
             var $calday = $(mday_tpl);
             $calday.attr('id', 'calday_' + date);
