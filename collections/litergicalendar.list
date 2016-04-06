@@ -27,10 +27,10 @@
     {.var @doEndWrapper @proxyFalse}
   {.or}
     {.var @doStartWrapper @proxyTrue}
-    {.if @currentDay}
-      {.var @doEndWrapper @proxyTrue}
-    {.or}
+    {.equal?:@currentDay:@proxyFalse}
       {.var @doEndWrapper @proxyFalse}
+    {.or}
+      {.var @doEndWrapper @proxyTrue}
     {.end}
   {.end}
 
