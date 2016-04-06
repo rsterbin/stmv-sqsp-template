@@ -22,9 +22,9 @@
   <!-- {@itemDay} -->
   <!-- {@currentDay} -->
   {.equal?:@currentDay:@itemDay}
-  {.else}
+  {.or}
     {.equal @currentDay empty}
-    {.else}
+    {.or}
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                     </div>
 {.end}
 {.equal @currentDay empty}
-{.else}
+{.or}
                 </div>
             </div>
         </div>
