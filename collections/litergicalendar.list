@@ -56,7 +56,7 @@ $(document).ready(function (){
             date = $service.find('.service-day-ymd').text(),
             number = $service.find('.service-day-number').text(),
             weekday = $service.find('.service-day-weekday').text();
-        if (!(date) in found) {
+        if (!(date in found)) {
             var $calday = $(mday_tpl);
             $calday.attr('id', 'calday_' + date);
             $calday.find('.number').text(number);
