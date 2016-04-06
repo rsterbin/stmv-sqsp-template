@@ -20,20 +20,20 @@
 {.repeated section items}
   {.var @itemDay startDate|date %F}
   {.equal?:@currentDay:@itemDay}
-    {.var @doStartWrapper 0}
-    {.var @doEndWrapper 0}
+    {.var @doStartWrapper "false"}
+    {.var @doEndWrapper "false"}
   {.or}
-    {.var @doDoStartWrapper 1}
+    {.var @doDoStartWrapper "true"}
     {.equal?:@currentDay:empty}
-      {.var @doEndWrapper 0}
+      {.var @doEndWrapper "false"}
     {.or}
-      {.var @doEndWrapper 1}
+      {.var @doEndWrapper "true"}
     {.end}
   {.end}
 
   {.var @currentDay startDate|date %F}
 
-  {.if @doEndWrapper}
+  {.equal?:@doEndWrapper:"true"}
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
 </div>
   {.end}
 
-  {.if @doStartWrapper}
+  {.equal?:@doStartWrapper:"true"}
 <div class="row">
     <div class="large-8 large-centered columns">
         <div class="lcal-month-day">
