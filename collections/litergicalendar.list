@@ -76,8 +76,8 @@ $(document).ready(function (){
         var $block = $('#calendarbox #calday_' + date + ' .day-services');
         console.log($block);
         console.log($service);
-        $block.prepend($service);
-        $service.parent().remove();
+        $block.prepend($service.clone());
+        $service.closest('.raw-service').remove();
     });
 });
 </script>
