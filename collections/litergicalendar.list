@@ -74,8 +74,10 @@ $(document).ready(function (){
             found[date] = true;
         }
         var $block = $('#calendarbox #calday_' + date + ' .day-services');
+        console.log($block);
+        console.log($service);
         $block.prepend($service);
-        $service.remove();
+        $service.parent().remove();
     });
 });
 </script>
