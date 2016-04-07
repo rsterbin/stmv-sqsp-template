@@ -70,12 +70,12 @@ $(document).ready(function (){
             $calday.attr('id', 'calday_' + date);
             $calday.find('.number').text(number);
             $calday.find('.weekday').text(weekday);
-            // $('#calendarbox').prepend($calday);
+            $('#calendarbox').prepend($calday);
             found[date] = true;
         }
-        // var $block = $('#calendarbox #calday_' + date + ' .day-services');
-        // $block.prepend($service);
-        // $service.remove();
+        var $block = $('#calendarbox #calday_' + date + ' .day-services');
+        $block.prepend($service);
+        $service.remove();
     });
 });
 </script>
