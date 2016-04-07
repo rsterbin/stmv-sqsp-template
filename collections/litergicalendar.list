@@ -2,6 +2,9 @@
 
 <div class="success callout" data-closable>
     <pre style="color: blue;">console.log({@|json-pretty})</pre>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
 
 <div class="row column subtitle">
