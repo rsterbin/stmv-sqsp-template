@@ -71,19 +71,9 @@
     margin-top: 0.25em;
 }
 
-.lcal-month-day {
-    background-color: #fffae5;
-    border: 0.0675em solid #ccc;
-    margin: 0 0 1em 1em;
-    padding: 0.5em 1.5em 0.5em 0.5em;
-}
+/* service blocks */
 
-@media screen and (max-width: 39.9375em) {
-    .lcal-month-day .calendar-date {
-        padding: 0.5em 0;
-    }
-}
-
+.service .date .number.badge,
 .lcal-month-day .number.badge {
     font-size: 0.8em;
     background-color: #121e2c;
@@ -93,11 +83,81 @@
     margin-bottom: 0.25em;
 }
 
+.service .date .weekday,
 .lcal-month-day .weekday {
     font-style: italic;
     opacity: 0.7;
     padding-left: 0.25em;
     font-weight: bold;
+}
+
+.service {
+    background: transparent url("/assets/liturgical-colors/white1.png") repeat-y scroll 0 0;
+    padding: 1em 0 0 2.75em;
+}
+
+.service.color-gold {
+    background-image: url("/assets/liturgical-colors/gold1.png");
+}
+
+.service.color-purple {
+    background-image: url("/assets/liturgical-colors/purple1.png");
+}
+
+.service.color-blue {
+    background-image: url("/assets/liturgical-colors/blue1.png");
+}
+
+.service.color-red {
+    background-image: url("/assets/liturgical-colors/red1.png");
+}
+
+.service.color-rose {
+    background-image: url("/assets/liturgical-colors/rose1.png");
+}
+
+.service.color-black {
+    background-image: url("/assets/liturgical-colors/black1.png");
+}
+
+.service.color-white {
+    background-image: url("/assets/liturgical-colors/white1.png");
+}
+
+.service.color-green {
+    background-image: url("/assets/liturgical-colors/green1.png");
+}
+
+.service .title {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.111em;
+}
+
+.service .excerpt p {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.service .date .service-day-ymd {
+    display: none;
+}
+
+/* monthly calendar day blocks */
+
+.lcal-month-day .service + .service {
+    margin-top: 0.5em;
+}
+
+.lcal-month-day {
+    background-color: #fffae5;
+    border: 0.0675em solid #ccc;
+    margin: 0 0 1em 1em;
+    padding: 0.5em 1.5em 0.5em 0.5em;
+}
+
+.lcal-month-day .service .date {
+    display: none;
 }
 
 @media screen and (min-width: 40em) {
@@ -107,63 +167,20 @@
     }
 }
 
-.lcal-month-day .service {
-    background: transparent url("/assets/liturgical-colors/white1.png") repeat-y scroll 0 0;
-    padding: 1em 0 0 2.75em;
+@media screen and (max-width: 39.9375em) {
+    .lcal-month-day .calendar-date {
+        padding: 0.5em 0;
+    }
 }
 
-.lcal-month-day .service.color-gold {
-    background-image: url("/assets/liturgical-colors/gold1.png");
+/* raw service blocks (used if day-collecting js fails) */
+
+.raw-service {
+    background-color: #fffae5;
+    border: 0.0675em solid #ccc;
+    margin: 0 0 1em 1em;
+    padding: 0.5em 1.5em 0.5em 0.5em;
 }
 
-.lcal-month-day .service.color-purple {
-    background-image: url("/assets/liturgical-colors/purple1.png");
-}
 
-.lcal-month-day .service.color-blue {
-    background-image: url("/assets/liturgical-colors/blue1.png");
-}
-
-.lcal-month-day .service.color-red {
-    background-image: url("/assets/liturgical-colors/red1.png");
-}
-
-.lcal-month-day .service.color-rose {
-    background-image: url("/assets/liturgical-colors/rose1.png");
-}
-
-.lcal-month-day .service.color-black {
-    background-image: url("/assets/liturgical-colors/black1.png");
-}
-
-.lcal-month-day .service.color-white {
-    background-image: url("/assets/liturgical-colors/white1.png");
-}
-
-.lcal-month-day .service.color-green {
-    background-image: url("/assets/liturgical-colors/green1.png");
-}
-
-.lcal-month-day .service + .service {
-    margin-top: 0.5em;
-}
-
-.lcal-month-day .service .title {
-    font-weight: bold;
-    font-variant: small-caps;
-    font-size: 1.111em;
-}
-
-.lcal-month-day .service .excerpt p {
-    font-style: italic;
-    opacity: 0.8;
-}
-
-.service .service-day-ymd {
-    display: none;
-}
-
-.lcal-month-day .service .date {
-    display: none;
-}
 
