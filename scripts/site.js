@@ -14,8 +14,8 @@ var LC = {
         prev.setMonth(cdate.getMonth() - 1);
         next.setMonth(cdate.getMonth() + 1);
         return {
-            prev: this.calendarUrl + '?month=' + this.months[prev.getMonth()] + '-' + prev.getYear(),
-            next: this.calendarUrl + '?month=' + this.months[next.getMonth()] + '-' + next.getYear()
+            prev: this.calendarUrl + '?month=' + this.months[prev.getMonth()] + '-' + prev.getFullYear(),
+            next: this.calendarUrl + '?month=' + this.months[next.getMonth()] + '-' + next.getFullYear()
         };
     }
 
