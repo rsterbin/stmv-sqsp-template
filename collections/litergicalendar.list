@@ -76,7 +76,7 @@ $(document).ready(function (){
         $service.closest('.raw-service').remove();
     });
 
-    var prevNext = LC.paginationLinks({monthFilter});
+    var prevNext = LC.paginationLinks(new Date({monthFilter}));
     $('.liturgical-calendar-nav .prev a').attr('href', prevNext.prev);
     $('.liturgical-calendar-nav .next a').attr('href', prevNext.next);
 
