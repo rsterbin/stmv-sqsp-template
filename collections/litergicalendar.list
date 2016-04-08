@@ -72,27 +72,13 @@ $(document).ready(function (){
             found[date] = true;
         }
         var $block = $('#calendarbox #calday_' + date + ' .day-services');
-        console.log($block);
-        console.log($service);
         $block.prepend($service.clone());
         $service.closest('.raw-service').remove();
     });
 
-    var months = [ 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december' ];
-    var x = parseInt('{monthFilter|date %m}') - 1;
-    var y = parseInt('{monthFilter|date %Y}');
-    if (x - 1 < 1) {
-        var prev = '/litergical-calendar/?month=' + months[11] + '-' + (y - 1) + '&view=calendar';
-    } else {
-        var prev = '/litergical-calendar/?month=' + months[x - 1] + '-' + y + '&view=calendar';
-    }
-    if (x + 1 > 11) {
-        var next = '/litergical-calendar/?month=' + months[0] + '-' + (y + 1) + '&view=calendar';
-    } else {
-        var next = '/litergical-calendar/?month=' + months[x + 1] + '-' + y + '&view=calendar';
-    }
-    $('.liturgical-calendar-nav .prev a').attr('href', prev);
-    $('.liturgical-calendar-nav .next a').attr('href', next);
+    var prevNext = LC.paginationLinks({monthFilter});
+    $('.liturgical-calendar-nav .prev a').attr('href', prevNext.prev);
+    $('.liturgical-calendar-nav .next a').attr('href', prevNext.next);
 
 });
 </script>
