@@ -33,6 +33,11 @@
 {.end}
 </div>
 
+{.repeated section items}
+{.or}
+<div class="row column no-services">No services are set for this month</div>
+{.end}
+
 <script type="text/javascript">
 $(document).ready(function (){
     var mday_tpl = '<div class="row">' +
