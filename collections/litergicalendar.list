@@ -35,7 +35,7 @@
 
 {.repeated section items}
 {.or}
-<div class="row column no-services">No services are set for this month</div>
+<div class="row column no-services">No services are set for this month.</div>
 {.end}
 
 <script type="text/javascript">
