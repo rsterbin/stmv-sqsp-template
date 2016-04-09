@@ -8,22 +8,20 @@
                             </div>
                         </div>
 
+                        <div data-responsive-toggle="page_json" data-hide-for="large">
+                            <button type="button" data-toggle><i class="fa fa-code"></i> Show JSON</button>
+                        </div>
+                        <div class="success callout" id="page_json" data-closable style="display: none;">
+                            <pre style="color: blue;">console.log({@|json-pretty})</pre>
+                            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
                     </div><!-- end site -->
                 </div><!-- end off-canvas-content -->
             </div><!-- end off-canvas-wrapper-inner -->
         </div><!-- end off-canvas-wrapper -->
-
-        <!--
-        <div data-responsive-toggle="page_json" data-hide-for="large">
-            <button type="button" data-toggle><i class="fa fa-code"></i> Show JSON</button>
-        </div>
-        <div class="success callout" id="page_json" data-closable style="display: none;">
-            <pre style="color: blue;">console.log({@|json-pretty})</pre>
-            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        -->
 
         <script>
             $(document).foundation();
