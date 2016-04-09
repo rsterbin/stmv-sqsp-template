@@ -2,20 +2,15 @@
                         <div class="row" id="bottom-footer">
                             <div class="small-12 medium-7 columns">
                                 <squarespace:navigation navigationId="footerNav" template="footernav" />
+                                <a href="#" id="json-toggle"><i class="fa fa-code"></i></a>
                             </div>
                             <div class="small-12 medium-5 columns search">
                                 <squarespace:block-field id="footerSearchBox" columns="12" lock-layout="true" />
                             </div>
                         </div>
 
-                        <div data-responsive-toggle="page_json" data-hide-for="large">
-                            <button type="button" data-toggle><i class="fa fa-code"></i> Show JSON</button>
-                        </div>
-                        <div class="success callout" id="page_json" data-closable style="display: none;">
+                        <div class="row column" id="page_json" style="display: none;">
                             <pre style="color: blue;">console.log({@|json-pretty})</pre>
-                            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
 
                     </div><!-- end site -->
