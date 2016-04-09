@@ -9,7 +9,7 @@
                         </div>
 
                         <div class="row column" id="page_json" style="display: none;">
-                            <pre style="color: blue;">console.log({@|json-pretty})</pre>
+                            <code style="display: block; margin: 1em 0;"><pre>{@|json-pretty|htmltag}</pre></code>
                         </div>
 
                     </div><!-- end site -->
