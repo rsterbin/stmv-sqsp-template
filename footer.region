@@ -13,6 +13,7 @@
             </div><!-- end off-canvas-wrapper-inner -->
         </div><!-- end off-canvas-wrapper -->
 
+        <!--
         <div data-responsive-toggle="page_json" data-hide-for="large">
             <button type="button" data-toggle><i class="fa fa-code"></i> Show JSON</button>
         </div>
@@ -22,6 +23,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+        -->
 
         <script>
             $(document).foundation();
