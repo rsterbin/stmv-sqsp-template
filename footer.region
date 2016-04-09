@@ -2,7 +2,6 @@
                         <div class="row" id="bottom-footer">
                             <div class="small-12 medium-7 columns">
                                 <squarespace:navigation navigationId="footerNav" template="footernav" />
-                                <a href="#" id="json-toggle"><i class="fa fa-code"></i></a>
                             </div>
                             <div class="small-12 medium-5 columns search">
                                 <squarespace:block-field id="footerSearchBox" columns="12" lock-layout="true" />
