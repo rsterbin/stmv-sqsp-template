@@ -1,5 +1,4 @@
 {.section item}
-<div><pre style="color: green;">console.log({@|json-pretty})</pre></div>
 <div class="liturgical-layout-full">
     <div class="liturgical-calendar-day{.repeated section tags} {@|url-encode}{.end}">
         <h3>{title}</h3>

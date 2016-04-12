@@ -8,6 +8,10 @@
                             </div>
                         </div>
 
+                        <div class="row column" id="page_json" style="display: none;">
+                            <code style="display: block; margin: 1em 0;"><pre>{@|json-pretty|htmltag}</pre></code>
+                        </div>
+
                     </div><!-- end site -->
                 </div><!-- end off-canvas-content -->
             </div><!-- end off-canvas-wrapper-inner -->
