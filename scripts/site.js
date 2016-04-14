@@ -32,7 +32,7 @@ var LC = {
 
     initWeekly: function () {
         var $block = $('.liturgical-calendar-week');
-        if ($block.length > 0 && $block.html().length > 0) {
+        if ($block.length > 0 && $block.html().length < 1) {
             fetchWeekly($block);
         }
     }
