@@ -36,7 +36,7 @@
       {.end}
     </h1>
 
-    <h2 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time><a href="{collection.fullUrl}?author={author.id}" class="author">{author.displayName}</a></h2>
+    <h2 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></h2>
 
     <!--MAIN CONTENT-->
 

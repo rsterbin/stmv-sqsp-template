@@ -9,6 +9,7 @@
     <!--POST TILE-->
 
     <h1 class="title">
+        The Angelus:
       {.passthrough?}
         <a href="{sourceUrl}" target="_blank">{title}</a>
       {.or}
@@ -16,7 +17,7 @@
       {.end}
     </h1>
 
-    <h2 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time><a href="{collection.fullUrl}?author={author.id}" class="author">{author.displayName}</a></h2>
+    <h2 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time></h2>
 
     <!--MAIN CONTENT-->
 
@@ -25,6 +26,9 @@
     <!--BLOG INJECTION-->
 
     {postItemInjectCode}    
+
+    <!-- LITURGICAL CALENDAR -->
+    <div class="liturgical-calendar-week" rel="{addedOn|date %Y-%m-%d}"></div>
 
     <!--CATEGORIES-->
 
@@ -74,7 +78,7 @@
 {.end}
 
 {.section pagination}
-  <div class="pagination">
+  <div class="pagination-items">
     {.section prevItem}
     <div class="left">
       <span class="prev"><a href="{fullUrl}">&larr;</a></span>

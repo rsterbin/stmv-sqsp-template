@@ -17,6 +17,24 @@ var LC = {
             prev: this.calendarUrl + '?month=' + this.months[prev.getMonth()] + '-' + prev.getFullYear(),
             next: this.calendarUrl + '?month=' + this.months[next.getMonth()] + '-' + next.getFullYear()
         };
+    },
+
+    fetchWeekly: function ($block) {
+        var parts = $block.attr('rel').split('-');
+        var cdate = new Date(parts[0], parts[1], parts[2]);
+        $.get({
+            url: this.calendarUrl + '?month=' + this.months[cdate.getMonth()] + '-' + cdate.getFullYear() + '?format=json',
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    },
+
+    initWeekly: function () {
+        var $block = $('.liturgical-calendar-week');
+        if ($block.length > 0 && $block.html().length > 0) {
+            fetchWeekly($block);
+        }
     }
 
 };
