@@ -52,5 +52,6 @@ $(document).ready(function () {
     // Kill any hardcoded font sizes in the summary
     $('#homeAngelus .summary-excerpt p[style*="font-size"]').removeAttr('style');
     $('#homeAngelus .summary-excerpt span[style*="font-size"]').removeAttr('style');
+    LC.initWeekly();
 });
 
