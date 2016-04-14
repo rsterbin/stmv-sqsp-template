@@ -23,7 +23,7 @@ var LC = {
         var parts = $block.attr('rel').split('-');
         var cdate = new Date(parts[0], parts[1], parts[2]);
         $.get({
-            url: this.calendarUrl + '?month=' + this.months[cdate.getMonth()] + '-' + cdate.getFullYear() + '?format=json',
+            url: this.calendarUrl + '?month=' + this.months[cdate.getMonth()] + '-' + cdate.getFullYear() + '&format=json',
             success: function (data) {
                 console.log(data);
             }
