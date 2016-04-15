@@ -6,12 +6,12 @@
 
 var LC = {
     calendarUrl: '/liturgical-calendar/',
-    months: [ 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december' ],
+    months: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
     weekdays: [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ],
 
     weekDayTemplate: '<div class="row">' +
         '    <div class="large-8 large-centered columns">' +
-        '        <div class="lcal-week-day">' +
+        '        <div class="lcal-month-day">' +
         '            <div class="row">' +
         '                <div class="small-12 medium-2 columns">' +
         '                    <div class="calendar-date">' +
@@ -26,6 +26,18 @@ var LC = {
         '    </div>' +
         '</div>',
 
+    serviceTemplate: '<div class="service">' +
+        '    <div class="date">' +
+        '        <div class="service-day-ymd"></div>' +
+        '        <span class="service-day-number badge number"></span>' +
+        '        <span class="service-day-weekday weekday"></span>' +
+        '    </div>' +
+        '    <div class="title"><a href="{fullUrl|htmlattr}">{title|htmltag}</a></div>' +
+        '    <div class="excerpt">' +
+        '        {body}' +
+        '    </div>' +
+        '</div>',
+
     paginationLinks: function (cdate) {
         var prev = new Date(),
             next = new Date();
@@ -35,6 +47,10 @@ var LC = {
             prev: this.calendarUrl + '?month=' + this.months[prev.getMonth()] + '-' + prev.getFullYear(),
             next: this.calendarUrl + '?month=' + this.months[next.getMonth()] + '-' + next.getFullYear()
         };
+    },
+
+    ymd: function (dt) {
+        return dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate();
     },
 
     fetchWeekly: function ($block) {
@@ -51,7 +67,7 @@ var LC = {
         end.setDate(start.getDate() + 6);
         var services = new Array();
         $.get({
-            url: this.calendarUrl + '?month=' + this.months[start.getMonth()] + '-' + start.getFullYear() + '&format=json',
+            url: this.calendarUrl + '?month=' + this.months[start.getMonth()].toLowerCase() + '-' + start.getFullYear() + '&format=json',
             context: {  
                 services: services,
                 start: start,
@@ -69,7 +85,7 @@ var LC = {
                 }
                 if (this.start.getMonth() != this.end.getMonth()) {
                     $.get({
-                        url: this.calendarUrl + '?month=' + this.months[this.start.getMonth()] + '-' + this.start.getFullYear() + '&format=json',
+                        url: this.calendarUrl + '?month=' + this.months[this.start.getMonth()].toLowerCase() + '-' + this.start.getFullYear() + '&format=json',
                         context: this,
                         success: function (data) {
                             for (var i = 0; i < data.items.length; i++) {
@@ -92,14 +108,32 @@ var LC = {
         console.log(services);
         console.log(start);
         console.log(end);
+        var $t = $('<h1></h1>');
+        $t.text('The Calendar: ' + this.months[start.getMonth] + ' ' + start.getDate() + ' - ' +
+            this.months[end.getMonth] + ' ' + end.getDate());
         var cursor = new Date(start.getTime());
-        while (cursor < end) {
+        while (cursor <= end) {
             var $calday = $(this.weekDayTemplate);
-            $calday.attr('id', 'calday_' + cursor.getFullYear() + '-' + (cursor.getMonth() + 1) + '-' + cursor.getDate());
+            $calday.attr('id', 'calday_' + this.ymd(cursor));
             $calday.find('.number').text(cursor.getDate());
             $calday.find('.weekday').text(this.weekdays[cursor.getDay()]);
             $block.append($calday);
             cursor.setDate(cursor.getDate() + 1);
+        }
+        for (var i; i < services.length; i++) {
+            var item = services[i];
+            var $service = $(this.serviceTemplate);
+            for (var j; j < item.tags.length; j++) {
+                $service.addClass(item.tags[j]);
+            }
+            $service.find('.service-day-ymd').text(this.ymd(item.startDate));
+            $service.find('.service-day-number').text(item.startDate.getDate());
+            $service.find('.service-day-weekday').text(this.weekdays[item.startDate.getDay()]);
+            $service.find('.title a').attr('href', item.fullUrl);
+            $service.find('.title a').text(item.title);
+            $service.find('.excerpt').html(item.body);
+            var $inner = $block.find('#calday_' + date + ' .day-services');
+            $inner.append($service);
         }
     },
 
