@@ -37,7 +37,7 @@ var LC = {
             context: { services: services, start: start, end: end, calendarUrl: this.calendarUrl, months: this.months },
             success: function (data) {
                 for (var i = 0; i < data.items.length; i++) {
-                    var item = data.items[i].addedOn;
+                    var item = data.items[i];
                     console.log(item.addedOn);
                     console.log(item.addedOn >= this.start);
                     console.log(item.addedOn <= this.end);
@@ -51,7 +51,7 @@ var LC = {
                         context: this,
                         success: function (data) {
                             for (var i = 0; i < data.items.length; i++) {
-                                var item = data.items[i].addedOn;
+                                var item = data.items[i];
                                 console.log(item.addedOn);
                                 console.log(item.addedOn >= this.start);
                                 console.log(item.addedOn <= this.end);
