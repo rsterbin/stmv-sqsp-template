@@ -66,13 +66,13 @@ var LC = {
             return;
         }
         var start = new Date(cdate.getTime());
-        console.log(cdate);
-        console.log(cdate.getDay());
         if (cdate.getDay() > 0) {
             start.setDate(cdate.getDate() - cdate.getDay());
         }
         var end = new Date(start.getTime());
         end.setDate(start.getDate() + 6);
+        console.log(start);
+        console.log(end);
         var services = new Array();
         $.get({
             url: this.calendarUrl + '?month=' + this.months[start.getMonth()].toLowerCase() + '-' + start.getFullYear() + '&format=json',
