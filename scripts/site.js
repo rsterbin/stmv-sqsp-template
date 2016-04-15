@@ -38,6 +38,9 @@ var LC = {
             success: function (data) {
                 for (var i = 0; i < data.items.length; i++) {
                     var item = data.items[i].addedOn;
+                    console.log(item.addedOn);
+                    console.log(item.addedOn >= this.start);
+                    console.log(item.addedOn <= this.end);
                     if (item.addedOn >= this.start && item.addedOn <= this.end) {
                         this.services.push(item);
                     }
@@ -49,6 +52,9 @@ var LC = {
                         success: function (data) {
                             for (var i = 0; i < data.items.length; i++) {
                                 var item = data.items[i].addedOn;
+                                console.log(item.addedOn);
+                                console.log(item.addedOn >= this.start);
+                                console.log(item.addedOn <= this.end);
                                 if (item.addedOn >= this.start && item.addedOn <= this.end) {
                                     this.services.push(item);
                                 }
