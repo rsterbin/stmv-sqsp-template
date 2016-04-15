@@ -50,7 +50,10 @@ var LC = {
     },
 
     ymd: function (dt) {
-        return dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate();
+        var yyyy = dt.getFullYear().toString();
+        var mm = (dt.getMonth() + 1).toString();
+        var dd = dt.getDate().toString();
+        return yyyy + '-' + (mm[1] ? mm : '0' + mm[0]) + '-' + (dd[1] ? dd : '0' + dd[0]);
     },
 
     fetchWeekly: function ($block) {
@@ -109,8 +112,8 @@ var LC = {
         console.log(start);
         console.log(end);
         var $t = $('<h3></h3>');
-        $t.text('The Calendar: ' + this.months[start.getMonth] + ' ' + start.getDate() + ' - ' +
-            this.months[end.getMonth] + ' ' + end.getDate());
+        $t.text('The Calendar: ' + this.months[start.getMonth()] + ' ' + start.getDate() + ' - ' +
+            this.months[end.getMonth()] + ' ' + end.getDate());
         $block.append($t);
         var cursor = new Date(start.getTime());
         while (cursor <= end) {
@@ -128,6 +131,7 @@ var LC = {
                 $service.addClass(item.tags[j]);
             }
             var ymd = this.ymd(item.startDate);
+            console.log(ymd);
             $service.find('.service-day-ymd').text(ymd);
             $service.find('.service-day-number').text(item.startDate.getDate());
             $service.find('.service-day-weekday').text(this.weekdays[item.startDate.getDay()]);
