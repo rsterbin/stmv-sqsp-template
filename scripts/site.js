@@ -49,6 +49,14 @@ var LC = {
         };
     },
 
+    dateUrl: function (dt, json) {
+        var url = this.calendarUrl + '?month=' + this.months[dt.getMonth()].toLowerCase() + '-' + dt.getFullYear() + '&view=calendar';
+        if (json) {
+            url += '&format=json';
+        }
+        return url;
+    },
+
     ymd: function (dt) {
         var yyyy = dt.getFullYear().toString();
         var mm = (dt.getMonth() + 1).toString();
@@ -73,13 +81,12 @@ var LC = {
         end.setDate(start.getDate() + 6);
         var services = new Array();
         $.get({
-            url: this.calendarUrl + '?month=' + this.months[start.getMonth()].toLowerCase() + '-' + start.getFullYear() + '&format=json',
+            url: this.dateUrl(start, true),
             context: {  
                 services: services,
                 start: start,
                 end: end,
-                calendarUrl: this.calendarUrl,
-                months: this.months,
+                obj: this,
                 block: $block
             },
             success: function (data) {
@@ -92,7 +99,7 @@ var LC = {
                 }
                 if (this.start.getMonth() != this.end.getMonth()) {
                     $.get({
-                        url: this.calendarUrl + '?month=' + this.months[this.start.getMonth()].toLowerCase() + '-' + this.start.getFullYear() + '&format=json',
+                        url: this.obj.dateUrl(this.end, true),
                         context: this,
                         success: function (data) {
                             for (var i = 0; i < data.items.length; i++) {
@@ -101,11 +108,11 @@ var LC = {
                                     this.services.push(item);
                                 }
                             }
-                            LC.injectServices(this.services, this.start, this.end, this.block);
+                            this.obj.injectServices(this.services, this.start, this.end, this.block);
                         }
                     });
                 } else {
-                    LC.injectServices(this.services, this.start, this.end, this.block);
+                    this.obj.injectServices(this.services, this.start, this.end, this.block);
                 }
             }
         });
