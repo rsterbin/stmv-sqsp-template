@@ -1,8 +1,13 @@
+<div class="liturgical-calendar-week" rel="{addedOn|date %Y-%m-%d}"></div>
+
 {.section item}
+<div class="row column subtitle">
+    <h1>Liturgical Calendar: Service on {startDate|date %A, %B %e, %Y}</h1>
+</div>
+
 <div class="liturgical-layout-full">
     <div class="liturgical-calendar-day{.repeated section tags} {@|url-encode}{.end}">
         <h3>{title}</h3>
-        <h4>{startDate|date %A, %B %e, %Y}</h4>
         {body}
     </div>
 </div>
