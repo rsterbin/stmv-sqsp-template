@@ -108,9 +108,10 @@ var LC = {
         console.log(services);
         console.log(start);
         console.log(end);
-        var $t = $('<h1></h1>');
+        var $t = $('<h3></h3>');
         $t.text('The Calendar: ' + this.months[start.getMonth] + ' ' + start.getDate() + ' - ' +
             this.months[end.getMonth] + ' ' + end.getDate());
+        $block.append($t);
         var cursor = new Date(start.getTime());
         while (cursor <= end) {
             var $calday = $(this.weekDayTemplate);
@@ -126,13 +127,14 @@ var LC = {
             for (var j; j < item.tags.length; j++) {
                 $service.addClass(item.tags[j]);
             }
-            $service.find('.service-day-ymd').text(this.ymd(item.startDate));
+            var ymd = this.ymd(item.startDate);
+            $service.find('.service-day-ymd').text(ymd);
             $service.find('.service-day-number').text(item.startDate.getDate());
             $service.find('.service-day-weekday').text(this.weekdays[item.startDate.getDay()]);
             $service.find('.title a').attr('href', item.fullUrl);
             $service.find('.title a').text(item.title);
             $service.find('.excerpt').html(item.body);
-            var $inner = $block.find('#calday_' + date + ' .day-services');
+            var $inner = $block.find('#calday_' + ymd + ' .day-services');
             $inner.append($service);
         }
     },
