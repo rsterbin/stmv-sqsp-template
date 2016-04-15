@@ -36,6 +36,7 @@ var LC = {
             url: this.calendarUrl + '?month=' + this.months[start.getMonth()] + '-' + start.getFullYear() + '&format=json',
             context: { services: services, start: start, end: end, calendarUrl: this.calendarUrl, months: this.months },
             success: function (data) {
+                console.log(data.items);
                 for (var i = 0; i < data.items.length; i++) {
                     var item = data.items[i].addedOn;
                     if (item.addedOn >= this.start && item.addedOn <= this.end) {
@@ -47,6 +48,7 @@ var LC = {
                         url: this.calendarUrl + '?month=' + this.months[this.start.getMonth()] + '-' + this.start.getFullYear() + '&format=json',
                         context: this,
                         success: function (data) {
+                            console.log(data.items);
                             for (var i = 0; i < data.items.length; i++) {
                                 var item = data.items[i].addedOn;
                                 if (item.addedOn >= this.start && item.addedOn <= this.end) {
