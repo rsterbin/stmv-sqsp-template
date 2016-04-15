@@ -123,7 +123,7 @@ var LC = {
             this.months[end.getMonth()] + ' ' + end.getDate());
         $block.append($t);
         var cursor = new Date(start.getTime());
-        while (cursor <= end) {
+        while (cursor < end) {
             var $calday = $(this.weekDayTemplate);
             $calday.attr('id', 'calday_' + this.ymd(cursor));
             $calday.find('.number').text(cursor.getDate());
