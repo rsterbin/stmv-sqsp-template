@@ -20,14 +20,52 @@ var LC = {
     },
 
     fetchWeekly: function ($block) {
-        var parts = $block.attr('rel').split('-');
-        var cdate = new Date(parts[0], parts[1] - 1, parts[2]);
+        var epoch = Date.parse($block.attr('rel'));
+        if (isNaN(epoch)) {
+            return;
+        }
+        var cdate = new Date(epoch);
+        var start = new Date(cdate.getTime());
+        if (cdate.getDay() > 0) {
+            start.setDate(cdate.getDate() - cdate.getDay());
+        }
+        var end = new Date(start.getTime);
+        end.setDate(start.getDate() + 6);
+        var services = new Array();
         $.get({
-            url: this.calendarUrl + '?month=' + this.months[cdate.getMonth()] + '-' + cdate.getFullYear() + '&format=json',
+            url: this.calendarUrl + '?month=' + this.months[start.getMonth()] + '-' + start.getFullYear() + '&format=json',
+            context: { services: services, start: start, end: end, calendarUrl: this.calendarUrl, months: this.months },
             success: function (data) {
-                console.log(data);
+                for (var i = 0; i < data.items.length; i++) {
+                    var item = data.items[i].addedOn;
+                    if (item.addedOn >= this.start && item.addedOn <= this.end) {
+                        this.services.push(item);
+                    }
+                }
+                if (this.start.getMonth() != this.end.getMonth()) {
+                    $.get({
+                        url: this.calendarUrl + '?month=' + this.months[this.start.getMonth()] + '-' + this.start.getFullYear() + '&format=json',
+                        context: this,
+                        success: function (data) {
+                            for (var i = 0; i < data.items.length; i++) {
+                                var item = data.items[i].addedOn;
+                                if (item.addedOn >= this.start && item.addedOn <= this.end) {
+                                    this.services.push(item);
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    LC.injectServices(this.services, this.start, this.end);
+                }
             }
         });
+    },
+
+    injectServices: function (services, start, end) {
+        console.log(services);
+        console.log(start);
+        console.log(end);
     },
 
     initWeekly: function () {
