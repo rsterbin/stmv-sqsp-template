@@ -63,6 +63,7 @@ var LC = {
         }
         var cdate = new Date(epoch);
         var start = new Date(cdate.getTime());
+        console.log(cdate.getDay());
         if (cdate.getDay() > 0) {
             start.setDate(cdate.getDate() - cdate.getDay());
         }
@@ -108,9 +109,6 @@ var LC = {
     },
 
     injectServices: function (services, start, end, $block) {
-        console.log(services);
-        console.log(start);
-        console.log(end);
         var $t = $('<h3></h3>');
         $t.text('The Calendar: ' + this.months[start.getMonth()] + ' ' + start.getDate() + ' - ' +
             this.months[end.getMonth()] + ' ' + end.getDate());
@@ -132,7 +130,6 @@ var LC = {
             }
             var idate = new Date(item.startDate);
             var ymd = this.ymd(idate);
-            console.log(ymd);
             $service.find('.service-day-ymd').text(ymd);
             $service.find('.service-day-number').text(idate.getDate());
             $service.find('.service-day-weekday').text(this.weekdays[idate.getDay()]);
