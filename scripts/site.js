@@ -124,7 +124,7 @@ var LC = {
             $block.append($calday);
             cursor.setDate(cursor.getDate() + 1);
         }
-        for (var i; i < services.length; i++) {
+        for (var i = 0; i < services.length; i++) {
             var item = services[i];
             var $service = $(this.serviceTemplate);
             for (var j; j < item.tags.length; j++) {
