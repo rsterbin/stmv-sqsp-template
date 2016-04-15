@@ -118,6 +118,7 @@ var LC = {
     },
 
     injectServices: function (services, start, end, $block) {
+        console.log(services);
         var $t = $('<h3></h3>');
         $t.text('The Calendar: ' + this.months[start.getMonth()] + ' ' + start.getDate() + ' - ' +
             this.months[end.getMonth()] + ' ' + end.getDate());
