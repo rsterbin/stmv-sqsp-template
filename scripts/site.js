@@ -130,11 +130,12 @@ var LC = {
             for (var j; j < item.tags.length; j++) {
                 $service.addClass(item.tags[j]);
             }
-            var ymd = this.ymd(item.startDate);
+            var idate = new Date(item.startDate);
+            var ymd = this.ymd(idate);
             console.log(ymd);
             $service.find('.service-day-ymd').text(ymd);
-            $service.find('.service-day-number').text(item.startDate.getDate());
-            $service.find('.service-day-weekday').text(this.weekdays[item.startDate.getDay()]);
+            $service.find('.service-day-number').text(idate.getDate());
+            $service.find('.service-day-weekday').text(this.weekdays[idate.getDay()]);
             $service.find('.title a').attr('href', item.fullUrl);
             $service.find('.title a').text(item.title);
             $service.find('.excerpt').html(item.body);
