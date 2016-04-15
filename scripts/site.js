@@ -7,6 +7,24 @@
 var LC = {
     calendarUrl: '/liturgical-calendar/',
     months: [ 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december' ],
+    weekdays: [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ],
+
+    weekDayTemplate: '<div class="row">' +
+        '    <div class="large-8 large-centered columns">' +
+        '        <div class="lcal-week-day">' +
+        '            <div class="row">' +
+        '                <div class="small-12 medium-2 columns">' +
+        '                    <div class="calendar-date">' +
+        '                        <span class="badge number"></span>' +
+        '                        <span class="weekday"></span>' +
+        '                    </div>' +
+        '                </div>' +
+        '                <div class="small-12 medium-10 columns day-services">' +
+        '                </div>' +
+        '            </div>' +
+        '        </div>' +
+        '    </div>' +
+        '</div>';
 
     paginationLinks: function (cdate) {
         var prev = new Date(),
@@ -34,13 +52,17 @@ var LC = {
         var services = new Array();
         $.get({
             url: this.calendarUrl + '?month=' + this.months[start.getMonth()] + '-' + start.getFullYear() + '&format=json',
-            context: { services: services, start: start, end: end, calendarUrl: this.calendarUrl, months: this.months },
+            context: {  
+                services: services,
+                start: start,
+                end: end,
+                calendarUrl: this.calendarUrl,
+                months: this.months,
+                block: $block
+            },
             success: function (data) {
                 for (var i = 0; i < data.items.length; i++) {
                     var item = data.items[i];
-                    console.log(item.addedOn);
-                    console.log(item.addedOn >= this.start);
-                    console.log(item.addedOn <= this.end);
                     if (item.addedOn >= this.start && item.addedOn <= this.end) {
                         this.services.push(item);
                     }
@@ -52,27 +74,33 @@ var LC = {
                         success: function (data) {
                             for (var i = 0; i < data.items.length; i++) {
                                 var item = data.items[i];
-                                console.log(item.addedOn);
-                                console.log(item.addedOn >= this.start);
-                                console.log(item.addedOn <= this.end);
                                 if (item.addedOn >= this.start && item.addedOn <= this.end) {
                                     this.services.push(item);
                                 }
                             }
-                            LC.injectServices(this.services, this.start, this.end);
+                            LC.injectServices(this.services, this.start, this.end, this.block);
                         }
                     });
                 } else {
-                    LC.injectServices(this.services, this.start, this.end);
+                    LC.injectServices(this.services, this.start, this.end, this.block);
                 }
             }
         });
     },
 
-    injectServices: function (services, start, end) {
+    injectServices: function (services, start, end, $block) {
         console.log(services);
         console.log(start);
         console.log(end);
+        var cursor = new Date(start.getTime());
+        while (cursor < end) {
+            var $calday = $(this.weekDayTemplate);
+            $calday.attr('id', 'calday_' + cursor.getFullYear() + '-' + (cursor.getMonth() + 1) + '-' + cursor.getDate());
+            $calday.find('.number').text(cursor.getDate());
+            $calday.find('.weekday').text(this.weekdays[cursor.getDay()]);
+            $block.append($calday);
+            cursor.setDate(cursor.getDate() + 1);
+        }
     },
 
     initWeekly: function () {
