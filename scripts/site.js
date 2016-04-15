@@ -24,7 +24,7 @@ var LC = {
         '            </div>' +
         '        </div>' +
         '    </div>' +
-        '</div>';
+        '</div>',
 
     paginationLinks: function (cdate) {
         var prev = new Date(),
