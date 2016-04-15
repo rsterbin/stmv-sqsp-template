@@ -85,6 +85,7 @@ var LC = {
             success: function (data) {
                 for (var i = 0; i < data.items.length; i++) {
                     var item = data.items[i];
+                    console.log(new Date(item.addedOn));
                     if (item.addedOn >= this.start && item.addedOn <= this.end) {
                         this.services.push(item);
                     }
@@ -111,7 +112,6 @@ var LC = {
     },
 
     injectServices: function (services, start, end, $block) {
-        console.log(services);
         var $t = $('<h3></h3>');
         $t.text('The Calendar: ' + this.months[start.getMonth()] + ' ' + start.getDate() + ' - ' +
             this.months[end.getMonth()] + ' ' + end.getDate());
