@@ -63,6 +63,7 @@ var LC = {
         }
         var cdate = new Date(epoch);
         var start = new Date(cdate.getTime());
+        console.log(cdate);
         console.log(cdate.getDay());
         if (cdate.getDay() > 0) {
             start.setDate(cdate.getDate() - cdate.getDay());
