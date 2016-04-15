@@ -29,7 +29,7 @@ var LC = {
         if (cdate.getDay() > 0) {
             start.setDate(cdate.getDate() - cdate.getDay());
         }
-        var end = new Date(start.getTime);
+        var end = new Date(start.getTime());
         end.setDate(start.getDate() + 6);
         var services = new Array();
         $.get({
