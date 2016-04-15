@@ -57,11 +57,14 @@ var LC = {
     },
 
     fetchWeekly: function ($block) {
-        var epoch = Date.parse($block.attr('rel'));
-        if (isNaN(epoch)) {
+        var parts = $block.attr('rel').split('-');
+        if (parts.length != 3) {
             return;
         }
-        var cdate = new Date(epoch);
+        var cdate = new Date(parts[0], parts[1] - 1, parts[2]);
+        if (isNaN(cdate.getTime())) {
+            return;
+        }
         var start = new Date(cdate.getTime());
         console.log(cdate);
         console.log(cdate.getDay());
