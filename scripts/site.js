@@ -92,8 +92,7 @@ var LC = {
             success: function (data) {
                 for (var i = 0; i < data.items.length; i++) {
                     var item = data.items[i];
-                    console.log(new Date(item.addedOn));
-                    if (item.addedOn >= this.start && item.addedOn <= this.end) {
+                    if (item.startDate >= this.start && item.startDate <= this.end) {
                         this.services.push(item);
                     }
                 }
@@ -104,7 +103,7 @@ var LC = {
                         success: function (data) {
                             for (var i = 0; i < data.items.length; i++) {
                                 var item = data.items[i];
-                                if (item.addedOn >= this.start && item.addedOn <= this.end) {
+                                if (item.startDate >= this.start && item.startDate <= this.end) {
                                     this.services.push(item);
                                 }
                             }
