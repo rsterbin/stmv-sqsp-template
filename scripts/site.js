@@ -78,7 +78,7 @@ var LC = {
             start.setDate(cdate.getDate() - cdate.getDay());
         }
         var end = new Date(start.getTime());
-        end.setDate(start.getDate() + 6);
+        end.setDate(start.getDate() + 7);
         var services = new Array();
         $.get({
             url: this.dateUrl(start, true),
@@ -92,7 +92,7 @@ var LC = {
             success: function (data) {
                 for (var i = 0; i < data.items.length; i++) {
                     var item = data.items[i];
-                    if (item.startDate >= this.start && item.startDate <= this.end) {
+                    if (item.startDate >= this.start && item.startDate < this.end) {
                         this.services.push(item);
                     }
                 }
@@ -103,7 +103,7 @@ var LC = {
                         success: function (data) {
                             for (var i = 0; i < data.items.length; i++) {
                                 var item = data.items[i];
-                                if (item.startDate >= this.start && item.startDate <= this.end) {
+                                if (item.startDate >= this.start && item.startDate < this.end) {
                                     this.services.push(item);
                                 }
                             }
@@ -118,7 +118,6 @@ var LC = {
     },
 
     injectServices: function (services, start, end, $block) {
-        console.log(services);
         var $t = $('<h3></h3>');
         $t.text('The Calendar: ' + this.months[start.getMonth()] + ' ' + start.getDate() + ' - ' +
             this.months[end.getMonth()] + ' ' + end.getDate());
