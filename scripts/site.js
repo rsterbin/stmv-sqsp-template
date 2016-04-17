@@ -116,18 +116,19 @@ var LC = {
     },
 
     injectServices: function (services, start, end, $block) {
-        var $title = $block.closest('row').find('.liturgical-calendar-week-title');
+        var $title = $block.find('.week-title');
         if ($title.length > 0) {
             $title.text('The Calendar: ' + this.months[start.getMonth()] + ' ' + start.getDate() + ' - ' +
                 this.months[end.getMonth()] + ' ' + end.getDate());
         }
+        var $sblock = $block.find('.week-services');
         var cursor = new Date(start.getTime());
         while (cursor < end) {
             var $calday = $(this.weekDayTemplate);
             $calday.attr('id', 'calday_' + this.ymd(cursor));
             $calday.find('.number').text(cursor.getDate());
             $calday.find('.weekday').text(this.weekdays[cursor.getDay()]);
-            $block.append($calday);
+            $sblock.append($calday);
             cursor.setDate(cursor.getDate() + 1);
         }
         for (var i = 0; i < services.length; i++) {
@@ -144,14 +145,15 @@ var LC = {
             $service.find('.title a').attr('href', item.fullUrl);
             $service.find('.title a').text(item.title);
             $service.find('.excerpt').html(item.body);
-            var $inner = $block.find('#calday_' + ymd + ' .day-services');
+            var $inner = $sblock.find('#calday_' + ymd + ' .day-services');
             $inner.append($service);
         }
     },
 
     initWeekly: function () {
-        var $block = $('.liturgical-calendar-week');
-        if ($block.length > 0 && $block.html().length < 1) {
+        var $block = $('.liturgical-calendar-week'),
+            $services = $block.find('.week-services');
+        if ($block.length > 0 && $services.length > 0 && $services.html().length < 1) {
             this.fetchWeekly($block);
         }
     }

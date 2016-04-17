@@ -13,7 +13,9 @@
         </div>
     </div>
     <div class="small-12 columns">
-        <div class="liturgical-calendar-week" rel="{startDate|date %Y-%m-%d}"></div>
+        <div class="liturgical-calendar-week" rel="{startDate|date %Y-%m-%d}">
+            <div class="week-services"></div>
+        </div>
     </div>
 </div>
 {.end}
