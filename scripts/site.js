@@ -118,8 +118,10 @@ var LC = {
     injectServices: function (services, start, end, $block) {
         var $title = $block.find('.week-title');
         if ($title.length > 0) {
+            var lastDay = new Date(end);
+            lastDay.setDate(end.getDate() - 1);
             $title.text('The Calendar: ' + this.months[start.getMonth()] + ' ' + start.getDate() + ' - ' +
-                this.months[end.getMonth()] + ' ' + end.getDate());
+                this.months[lastDay.getMonth()] + ' ' + lastDay.getDate());
         }
         var $sblock = $block.find('.week-services');
         var cursor = new Date(start.getTime());
