@@ -3,12 +3,17 @@
     <h1>Liturgical Calendar: Service on {startDate|date %A, %B %e, %Y}</h1>
 </div>
 
-<div class="liturgical-layout-full">
-    <div class="liturgical-calendar-day{.repeated section tags} {@|url-encode}{.end}">
-        <h3>{title}</h3>
-        {body}
+<div class="row">
+    <div class="small-12 columns">
+        <div class="liturgical-layout-full detail">
+            <div class="liturgical-calendar-day{.repeated section tags} {@|url-encode}{.end}">
+                <h3>{title}</h3>
+                {body}
+            </div>
+        </div>
+    </div>
+    <div class="small-12 columns">
+        <div class="liturgical-calendar-week" rel="{startDate|date %Y-%m-%d}"></div>
     </div>
 </div>
-
-<div class="liturgical-calendar-week" rel="{startDate|date %Y-%m-%d}"></div>
 {.end}

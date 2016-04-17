@@ -1,12 +1,7 @@
-
 {.section item}
 
-<div class="post-wrapper">
-<!--WRAPPER-->
-<section class="body">  
-  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
-    
-    <!--POST TILE-->
+<div class="row column">
+  <div id="post-{id}" class="article {@|item-classes}" data-item-id="{id}">
 
     <h1 class="title">
         The Angelus:
@@ -19,22 +14,22 @@
 
     <h2 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time></h2>
 
-    <!--MAIN CONTENT-->
-
     {body}
-
-    <!--BLOG INJECTION-->
 
     {postItemInjectCode}    
 
-    <!-- LITURGICAL CALENDAR -->
-    <div class="liturgical-calendar-week" rel="{addedOn|date %Y-%m-%d}"></div>
+    <div class="row liturgical-calendar-week">
+        <div class="large-8 large-centered columns">
+            <h2 class="liturgical-calendar-week-title"></h2>
+            <div class="liturgical-calendar-week" rel="{addedOn|date %Y-%m-%d}"></div>
+        </div>
+    </div>
 
-    <!--CATEGORIES-->
+    <div class="share">
+    </div>
 
     <div class="post-meta">
 
-      <!--COMMENTS, SHARE, LIKE-->
       <div class="comment-share-like">
         {.passthrough?}{.or}{.section sourceUrl}<a href="{sourceUrl}" class="source" target="_blank" title="Source">Source</a>{.end}{.end}
         {.comments?}
@@ -55,7 +50,6 @@
       </div>
       {.if categories || tags} 
         <div class="tags-cats">
-          <!--CATEGORIES-->
           {.if categories}
             <em>categories</em> {.repeated section categories}
               <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
@@ -63,7 +57,6 @@
             <br />
           {.end}
           {.if tags}
-            <!--TAGS-->
             <em>tags</em> {.repeated section tags}
               <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
             {.end}
@@ -72,8 +65,8 @@
       {.end}
     </div>
 
-  </article>
-</section>
+  </div>
+</div>
 
 {.end}
 
@@ -104,7 +97,6 @@
 </div> <!-- /.post-wrapper -->
 
 {.section item}
-  <!-- COMMENTS -->
   {.comments?}
   <div id="commentsWrapper">
   <section id="comments-{id}" class="comments-wrapper">
@@ -113,3 +105,4 @@
   </div>
   {.end}
 {.end}
+
