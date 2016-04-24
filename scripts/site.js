@@ -148,7 +148,7 @@ var LC = {
             $service.find('.title a').text(item.title);
             $service.find('.excerpt').html(item.body);
             var $inner = $sblock.find('#calday_' + ymd + ' .day-services');
-            $inner.append($service);
+            $inner.prepend($service);
         }
     },
 
