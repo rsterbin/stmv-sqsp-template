@@ -136,7 +136,9 @@ var LC = {
         for (var i = 0; i < services.length; i++) {
             var item = services[i];
             var $service = $(this.serviceTemplate);
+            console.log(item.tags);
             for (var j; j < item.tags.length; j++) {
+                console.log(item.tags[j]);
                 $service.addClass(item.tags[j]);
             }
             var idate = new Date(item.startDate);
