@@ -20,7 +20,7 @@
 
         {.if template.mobileStylesEnabled}{.or}<!-- Squarespace Mobile Styles Disabled -->{.end}
     </head>
-    <body id="{squarespace.page-id}" class="{squarespace.page-classes}default-interior">
+    <body id="{squarespace.page-id}" class="{squarespace.page-classes} default-interior">
         <div class="off-canvas-wrapper">
             <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
                 <div class="off-canvas position-left" id="off_canvas_left" data-off-canvas>
