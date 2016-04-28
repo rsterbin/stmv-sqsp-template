@@ -17,9 +17,11 @@
             </div><!-- end off-canvas-wrapper-inner -->
         </div><!-- end off-canvas-wrapper -->
 
+<!--
         <script>
             $(document).foundation();
         </script>
+-->
 
     </body>
 </html>
