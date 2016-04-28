@@ -1,18 +1,26 @@
 {.section item}
 
-<div class="row column">
-  <div id="post-{id}" class="article {@|item-classes}" data-item-id="{id}">
+<h1>The Angelus</h1>
 
-    <h1 class="title">
-        The Angelus:
+{.if categories}
+<h2>
+    {.repeated section categories}
+    <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+    {.end}
+</h2>
+{.end}
+
+<div class="row column">
+  <div id="post-{id}" class="angelus-post {@|item-classes}" data-item-id="{id}">
+
+    <h4 class="title">
       {.passthrough?}
         <a href="{sourceUrl}" target="_blank">{title}</a>
       {.or}
         <a href="{fullUrl}">{title}</a>
       {.end}
-    </h1>
-
-    <h2 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time></h2>
+    </h4>
+    <h5 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time></h5>
 
     {body}
 
