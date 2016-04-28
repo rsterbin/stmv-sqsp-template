@@ -2,8 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        {.if template.mobileStylesEnabled}
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        {.end}
 
         <meta name="description" content="Saint Mary's was founded in 1868 to be the Episcopal parish church for the new residential neighborhood, then called Longacre Square, here in midtown Manhattan. Our doors have been open daily for welcome and worship since December 8, 1870. All are welcome. Our members and friends now live both near and far from Times Square. We invite you to join us.">
 
@@ -16,9 +18,9 @@
 
         {squarespace-headers}
 
-        {.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Disabled -->{.end}
+        {.if template.mobileStylesEnabled}{.or}<!-- Squarespace Mobile Styles Disabled -->{.end}
     </head>
-    <body class="default-interior">
+    <body id="{squarespace.page-id}" class="{squarespace.page-classes}default-interior">
         <div class="off-canvas-wrapper">
             <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
                 <div class="off-canvas position-left" id="off_canvas_left" data-off-canvas>
