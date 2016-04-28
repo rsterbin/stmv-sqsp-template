@@ -3,7 +3,7 @@
 <h1>The Angelus</h1>
 
 <div class="row column">
-  <div id="post-{id}" class="angelus-post {@|item-classes}" data-item-id="{id}">
+  <div id="post-{id}" class="angelus-post-single {@|item-classes}" data-item-id="{id}">
 
     <div class="angelus-metadata">
     {.if categories}
