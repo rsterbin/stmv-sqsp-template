@@ -18,11 +18,9 @@
 
     {postItemInjectCode}    
 
-    <div class="row liturgical-calendar-week" rel="{addedOn|date %Y-%m-%d}">
-        <div class="large-8 large-centered columns">
-            <h2 class="week-title"></h2>
-            <div class="week-services"></div>
-        </div>
+    <div class="row column liturgical-calendar-week" rel="{addedOn|date %Y-%m-%d}">
+        <h2 class="week-title"></h2>
+        <div class="week-services"></div>
     </div>
 
     <div class="share">

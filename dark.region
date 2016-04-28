@@ -1,4 +1,6 @@
-<div class="column row collapse dark-interior" id="main">
-    {squarespace.main-content}
+<div class="row collapse dark-interior" id="main">
+    <div class="small-12 large-10 large-centered">
+        {squarespace.main-content}
+    </div>
 </div>
 

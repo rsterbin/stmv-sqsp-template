@@ -1,6 +1,7 @@
 {.section item}
 <div class="row column subtitle">
-    <h1>Liturgical Calendar: Service on {startDate|date %A, %B %e, %Y}</h1>
+    <h1>Liturgical Calendar</h1>
+    <h2>Service on {startDate|date %A, %B %e, %Y}</h2>
 </div>
 
 <div class="row">

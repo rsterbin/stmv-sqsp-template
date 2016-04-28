@@ -45,21 +45,19 @@
 
 <script type="text/javascript">
 $(document).ready(function (){
-    var mday_tpl = '<div class="row">' +
-        '    <div class="large-8 large-centered columns">' +
-        '        <div class="lcal-month-day">' +
-        '            <div class="row">' +
-        '                <div class="small-12 medium-2 columns">' +
-        '                    <div class="calendar-date">' +
-        '                        <span class="badge number"></span>' +
-        '                        <span class="weekday"></span>' +
-        '                    </div>' +
-        '                </div>' +
-        '                <div class="small-12 medium-10 columns day-services">' +
-        '                </div>' +
-        '            </div>' +
-        '        </div>' +
-        '    </div>' +
+    var mday_tpl = '<div class="row column">' +
+        '   <div class="lcal-month-day">' +
+        '       <div class="row">' +
+        '           <div class="small-12 medium-2 columns">' +
+        '               <div class="calendar-date">' +
+        '                   <span class="badge number"></span>' +
+        '                   <span class="weekday"></span>' +
+        '               </div>' +
+        '           </div>' +
+        '           <div class="small-12 medium-10 columns day-services">' +
+        '           </div>' +
+        '       </div>' +
+        '   </div>' +
         '</div>';
 
     var found = {};
