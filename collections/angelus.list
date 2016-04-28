@@ -1,9 +1,11 @@
-<!-- CATEGORY FILTER RESULTS ex: http://base-template.squarespace.com/blog/?category=category1 -->
+<h1>The Angelus</h1>
+
+<!-- CATEGORY FILTER RESULTS e.g., http://base-template.squarespace.com/blog/?category=category1 -->
 {.section categoryFilter}
   <p class="filter">Filtering by Category: {@|safe}</p>
 {.end}
 
-<!-- TAG FILTER RESULTS ex: http://base-template.squarespace.com/blog/?tag=tag2 -->
+<!-- TAG FILTER RESULTS e.g., http://base-template.squarespace.com/blog/?tag=tag2 -->
 {.section tagFilter}
   <p class="filter">Filtering by Tag: {@|safe}</p>
 {.end}
