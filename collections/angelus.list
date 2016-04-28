@@ -14,18 +14,18 @@
 <div class="angelus-post-list">
   {.repeated section items}
   <div id="post-{id}" class="angelus-post {@|item-classes}" data-item-id="{id}">
-    <h3 class="title">
+    <h4 class="title">
       {.passthrough?}
         <a href="{sourceUrl}" target="_blank">{title}</a>
       {.or}
         <a href="{fullUrl}">{title}</a>
       {.end}
-    </h3>
+    </h4>
     <h5 class="date-author"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></h5>
     <div class="angelus-body">
     {.if excerpt}
       {excerpt}
-      <a class="link" href="{fullUrl}">Read More</a>
+      <a class="link" href="{fullUrl}">Read More <i class="fa fa-arrow-circle-o-right"></i></a>
     {.or}
       {body}
     {.end}
