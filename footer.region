@@ -17,7 +17,8 @@
             </div><!-- end off-canvas-wrapper-inner -->
         </div><!-- end off-canvas-wrapper -->
 
-        {squarespace-footers}
+        <!-- {squarespace-footers} -->
+        <script type="text/javascript" src="https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/8593/scripts/SQSPGlobal.js"></script>
 
         <script>
             $(document).foundation();
