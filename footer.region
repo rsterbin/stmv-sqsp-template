@@ -17,6 +17,8 @@
             </div><!-- end off-canvas-wrapper-inner -->
         </div><!-- end off-canvas-wrapper -->
 
+        {squarespace-footers}
+
         <script>
             $(document).foundation();
             {.if template.mobileStylesEnabled}{.or}
