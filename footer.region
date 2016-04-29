@@ -18,9 +18,13 @@
         </div><!-- end off-canvas-wrapper -->
 
         <!-- {squarespace-footers} -->
+        <script data-sqs-type="imageloader-bootstraper" type="text/javascript">
+            (function() {if(window.ImageLoader) { window.ImageLoader.bootstrap(); }})();
+        </script>
 
         <script>
             $(document).foundation();
+            Squarespace.afterBodyLoad(Y);
         </script>
 
     </body>
