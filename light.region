@@ -1,6 +1,8 @@
 <div class="row light-interior" id="main">
     <div class="small-12 large-10 large-centered columns">
-        {squarespace.main-content}
+        <div data-content-field="main-content">
+            {squarespace.main-content}
+        </div>
     </div>
 </div>
 
