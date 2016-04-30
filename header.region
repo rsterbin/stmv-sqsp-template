@@ -17,28 +17,3 @@
         {squarespace-headers}
     </head>
     <body id="{squarespace.page-id}" class="{squarespace.page-classes} default-interior">
-        <div class="off-canvas-wrapper">
-            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-                <div class="off-canvas position-left" id="off_canvas_left" data-off-canvas>
-                    <squarespace:navigation navigationId="mainNav" template="navigation-mobile" />
-                </div>
-
-                <div class="off-canvas-content" data-off-canvas-content>
-                    <div id="site">
-
-                        <div class="row collapse" id="header">
-                            <div class="small-12 columns" id="titlebar">
-                                <div class="toggle-menu hide-for-medium" data-toggle="off_canvas_left">
-                                    <button class="menu-icon" type="button" data-toggle></button>
-                                    <div class="title-bar-title">Menu</div>
-                                </div>
-
-                                <h1><a href="/" data-content-field="site-title">{website.siteTitle}</a></h1>
-                                <h2 data-content-field="site-tag-line">{website.siteTagLine}</h2>
-                            </div>
-
-                            <div class="small-12 columns menu-centered show-for-medium" id="nav">
-                                <squarespace:navigation navigationId="mainNav" template="navigation" />
-                            </div>
-                        </div>
-

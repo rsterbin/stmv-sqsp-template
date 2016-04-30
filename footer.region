@@ -1,21 +1,4 @@
 
-                        <div class="row" id="bottom-footer">
-                            <div class="small-12 medium-7 columns">
-                                <squarespace:navigation navigationId="footerNav" template="footernav" />
-                            </div>
-                            <div class="small-12 medium-5 columns search">
-                                <squarespace:block-field id="footerSearchBox" columns="12" lock-layout="true" />
-                            </div>
-                        </div>
-
-                        <div class="row column" id="page_json" style="display: none;">
-                            <code style="display: block; margin: 1em 0;"><pre>{@|json-pretty|htmltag}</pre></code>
-                        </div>
-
-                    </div><!-- end site -->
-                </div><!-- end off-canvas-content -->
-            </div><!-- end off-canvas-wrapper-inner -->
-        </div><!-- end off-canvas-wrapper -->
 
         <!--Combo and minify the scripts when you're not logged in.-->
         <squarespace:script src="image-loader.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
