@@ -21,7 +21,6 @@ $(document).ready(function (){
         { icon: 'fa-instagram', regex:  /instagram\.com/ },
         { icon: 'fa-pinterest-p', regex:  /pinterest\.com/ },
         { icon: 'fa-flickr', regex:  /flickr\.com/ },
-        { icon: 'fa-code', regex:  /example\.com/ },
     ];
     $('.social a').each(function () {
         var $a = $(this),
@@ -32,12 +31,6 @@ $(document).ready(function (){
             if ($a.attr('href').match(re)) {
                 $a.prepend('<i class="fa ' + ic + '"></i> ');
                 m = true;
-                if (ic == 'fa-code') {
-                    $a.click(function (e) {
-                        e.preventDefault();
-                        $('#page_json').toggle('slow');
-                    });
-                }
                 continue;
             }
         }
