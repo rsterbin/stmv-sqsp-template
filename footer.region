@@ -17,14 +17,14 @@
             </div><!-- end off-canvas-wrapper-inner -->
         </div><!-- end off-canvas-wrapper -->
 
-        <!-- {squarespace-footers} -->
-        <script data-sqs-type="imageloader-bootstraper" type="text/javascript">
-            (function() {if(window.ImageLoader) { window.ImageLoader.bootstrap(); }})();
-        </script>
+        <!--Combo and minify the scripts when you're not logged in.-->
+        <squarespace:script src="image-loader.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+
+        <!--Injection point for tracking scripts and user content from the code injection tab.-->
+        {squarespace-footers}
 
         <script>
             $(document).foundation();
-            Squarespace.afterBodyLoad(Y);
         </script>
 
     </body>
