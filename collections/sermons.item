@@ -1,0 +1,76 @@
+<h1><a href="{collection.fullUrl}">Sermons</a></h1>
+
+{.section item}
+
+<div class="row column">
+  <div id="post-{id}" class="sermons-post-single {@|item-classes}" data-item-id="{id}">
+
+    <div class="sermons-metadata">
+    {.if categories}
+        {.repeated section categories}
+        <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+        {.end}
+    {.end}
+        <br />
+        <time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time>
+    </div>
+
+    <h4 class="title">{title}</h4>
+
+    {body}
+
+    {postItemInjectCode}    
+
+    <div class="row column comment-share-like">
+        {.passthrough?}{.or}{.section sourceUrl}<a href="{sourceUrl}" class="source" target="_blank" title="Source">Source</a>{.end}{.end}
+        {.comments?}
+          {.if websiteSettings.disqusShortname}
+            {@|comment-link}
+          {.or}
+            {.section publicCommentCount}
+            <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">
+                {@} Comment{@|pluralize}
+            </a>
+            {.or}
+                <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">Comment</a>
+            {.end}
+          {.end}
+        {.end}
+        {.if websiteSettings.simpleLikingEnabled}<a class="like" title="Like this">{@|like-button}</a>{.end}
+        {@|social-button-inline}
+    </div>
+    <div class="share"></div>
+
+  </div>
+</div>
+
+{.end}
+
+{.section pagination}
+
+<div class="row sermons-pagination">
+    <div class="small-6 columns prev">
+        {.section prevItem}
+        <a href="{fullUrl}" title="{title}"><i class="fa fa-chevron-left"></i> {addedOn|date %B %d, %Y}</a>
+        {.or}
+        <span class="empty"><i class="fa fa-chevron-left"></i></span>
+        {.end}
+    </div>
+    <div class="small-6 columns next">
+        {.section nextItem}
+        <a href="{fullUrl}" title="{title}">{addedOn|date %B %d, %Y} <i class="fa fa-chevron-right"></i></a>
+        {.or}
+        <span class="empty"><i class="fa fa-chevron-right"></i></span>
+        {.end}
+    </div>
+</div>
+{.end}
+
+{.section item}
+  {.comments?}
+<div class="row column sermons-comments" id="comments-{id}" class="comments-wrapper">
+    {@|comments}
+</div>
+  {.end}
+{.end}
+
