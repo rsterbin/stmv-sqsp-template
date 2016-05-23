@@ -16,7 +16,7 @@
 
         {squarespace-headers}
     </head>
-    <body id="{squarespace.page-id}" class="{squarespace.page-classes} default-interior">
+    <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
         <div class="off-canvas-wrapper">
             <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
                 <div class="off-canvas position-left" id="off_canvas_left" data-off-canvas>
