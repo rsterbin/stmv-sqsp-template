@@ -35,10 +35,10 @@
             <div class="row" id="home-big-links">
                 <div class="small-12 columns">
                     <squarespace:navigation navigationId="homeNav" template="navigation-home" />
-                </div>
-                <div class="row focus">
-                    <div class="small-10 columns">
-                        <squarespace:block-field id="homeFocus" columns="12" />
+                    <div class="row focus">
+                        <div class="small-10 columns">
+                            <squarespace:block-field id="homeFocus" columns="12" />
+                        </div>
                     </div>
                 </div>
             </div>
