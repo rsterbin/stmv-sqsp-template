@@ -4,7 +4,7 @@
     <!-- ignoring folder {collection.navigationTitle|htmltag} -->
     {.or}
       {.section collection}
-    <div class="row home-big-link">
+    <div class="row column home-big-link">
         <a href="{fullUrl|htmlattr}">
             <div class="small-5 columns text">
                 <h3>{navigationTitle|htmltag}</h3>
