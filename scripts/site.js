@@ -166,6 +166,10 @@ var LC = {
 // }}}
 
 $(document).ready(function () {
+    // Trick the homepage Angelus summary into showing a real read-more link
+    $('#homeAngelus a.summary-read-more-link')
+        .text('Read More')
+        .wrap('<div class="read-more"></div>');
     LC.initWeekly();
 });
 
