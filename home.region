@@ -1,25 +1,43 @@
 <div class="column row collapse" id="main">
 
     <div class="row" id="home-top">
-        <div class="small-12 large-8 columns">
+        <div class="small-12 columns">
             <squarespace:block-field id="homeSlideshow" columns="12" />
-        </div>
-        <div class="small-12 large-4 columns">
-            <squarespace:block-field id="homeAngelus" columns="12" />
         </div>
     </div>
 
-    <div class="row" data-equalizer data-equalize-on="medium" id="home-bottom">
+    <div class="row" id="home-bottom">
         <div class="small-12 medium-6 large-7 columns" id="home-services">
-            <div class="liturgical-layout-full" data-equalizer-watch>
-                <squarespace:block-field id="homeServices" columns="12" />
+            <div class="wrap">
+                <div class="title">
+                    <h2>Worship Schedule</h2>
+                </div>
+                <div class="inner liturgical-layout-full">
+                    <squarespace:block-field id="homeServices" columns="12" />
+                </div>
+                <squarespace:block-field id="homeServicesTagline" columns="12" />
             </div>
         </div>
-        <div class="small-12 medium-6 large-5 columns" id="home-big-links">
-            <div data-equalizer-watch>
-                <squarespace:navigation navigationId="homeNav" template="navigation-home" />
+
+        <div class="small-12 medium-6 large-5 columns" id="home-sidebar">
+            <div class="row column" id="home-angelus">
+                <div class="wrap">
+                    <div class="title">
+                        <h2>The Angelus</h2>
+                        <p class="tagline">The Weekly Newsletter of Saint Mary's</p>
+                    </div>
+                    <div class="inner">
+                        <squarespace:block-field id="homeAngelus" columns="12" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="home-big-links">
+                <div class="small-12 columns">
+                    <squarespace:navigation navigationId="homeNav" template="navigation-home" />
+                </div>
                 <div class="row focus">
-                    <div class="small-10 medium-12 large-10 columns">
+                    <div class="small-10 columns">
                         <squarespace:block-field id="homeFocus" columns="12" />
                     </div>
                 </div>
