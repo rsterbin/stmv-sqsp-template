@@ -15,8 +15,8 @@
                 <div class="inner liturgical-layout-full">
                     <squarespace:block-field id="homeServices" columns="12" />
                 </div>
-                <squarespace:block-field id="homeServicesTagline" columns="12" />
             </div>
+            <squarespace:block-field id="homeServicesTagline" columns="12" />
         </div>
 
         <div class="small-12 medium-6 large-5 columns" id="home-sidebar">
