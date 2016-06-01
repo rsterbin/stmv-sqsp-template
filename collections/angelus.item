@@ -5,17 +5,22 @@
 <div class="row column">
   <div id="post-{id}" class="angelus-post-single {@|item-classes}" data-item-id="{id}">
 
-    <div class="angelus-metadata">
-    {.if categories}
-        {.repeated section categories}
-        <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+    <h4 class="title">
+      {.passthrough?}
+        <a href="{sourceUrl}" target="_blank">{title}</a>
+      {.or}
+        <a href="{fullUrl}">{title}</a>
+      {.end}
+    </h4>
+    <h5 class="date-author">
+        <time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>
+        {.if categories}
+            &bull;
+            {.repeated section categories}
+            <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+            {.end}
         {.end}
-    {.end}
-        <br />
-        <time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time>
-    </div>
-
-    <h4 class="title">{title}</h4>
+    </h5>
 
     {body}
 
