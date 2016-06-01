@@ -3,7 +3,7 @@
 {.section item}
 
 <div class="row column">
-  <div id="post-{id}" class="angelus-post-single {@|item-classes}" data-item-id="{id}">
+  <div id="post-{id}" class="angelus-post angelus-post-single {@|item-classes}" data-item-id="{id}">
 
     <h4 class="title">
       {.passthrough?}
