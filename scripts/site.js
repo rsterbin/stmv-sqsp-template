@@ -171,5 +171,23 @@ $(document).ready(function () {
         .text('Read More')
         .wrap('<div class="read-more"></div>');
     LC.initWeekly();
+
+    // MTA icon macro
+    $('strong').each(function () {
+        var $t = $(this),
+        txt = $t.text();
+        if (/^((MTA-[0-9A-Z]) ?)+$/.exec(txt)) {
+            var re = /(MTA-([0-9A-Z]))+/g;
+            var repl = [];
+            do {
+                var m = re.exec(txt);
+                if (m) {
+                    repl.push('<span class="badge mta-icon mta-icon-' + m[2] + '">' + m[2] + '</span>');
+                }
+            } while (m);
+            $t.html(repl.join(' '));
+        }
+    });
+
 });
 
