@@ -6,12 +6,6 @@
   <div id="post-{id}" class="sermons-post-single {@|item-classes}" data-item-id="{id}">
 
     <div class="sermons-metadata">
-    {.if categories}
-        {.repeated section categories}
-        <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
-        {.end}
-    {.end}
-        <br />
         <time datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time>
     </div>
 

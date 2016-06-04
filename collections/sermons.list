@@ -1,15 +1,5 @@
 <h1>Sermons</h1>
 
-<!-- CATEGORY FILTER RESULTS e.g., http://base-template.squarespace.com/blog/?category=category1 -->
-{.section categoryFilter}
-  <p class="filter">Filtering by Category: {@|safe}</p>
-{.end}
-
-<!-- TAG FILTER RESULTS e.g., http://base-template.squarespace.com/blog/?tag=tag2 -->
-{.section tagFilter}
-  <p class="filter">Filtering by Tag: {@|safe}</p>
-{.end}
-
 <!--ITEM LOOP-->
 <div class="sermons-post-list">
   {.repeated section items}
@@ -23,12 +13,6 @@
     </h4>
     <h5 class="date-author">
         <time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>
-        {.if categories}
-            &bull;
-            {.repeated section categories}
-            <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
-            {.end}
-        {.end}
     </h5>
     <div class="sermons-body">
     {.if excerpt}
