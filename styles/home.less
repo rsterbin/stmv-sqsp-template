@@ -2,6 +2,22 @@
  * Styles specific to the homepage, outside of the topic styles
  */
 
+// tweak: { "type" : "image", "title" : "Homepage Services Banner Image" }
+.home-services-banner-image {
+    background-image: url(/assets/schedule-banner.jpg);
+}
+
+// tweak: { "type" : "value", "title" : "Homepage Services Banner Position", "min" : 0, "max" : 100, "step" : 5 }
+@homeServicesBannerPosition: 50%;
+
+// tweak: { "type" : "image", "title" : "Homepage Angelus Banner Image" }
+.home-angelus-banner-image {
+    background-image: url(/assets/angelus-banner.jpg);
+}
+
+// tweak: { "type" : "value", "title" : "Homepage Angelus Banner Position", "min" : 0, "max" : 100, "step" : 5 }
+@homeAngelusBannerPosition: 50%;
+
 #home-top {
     padding: 1em 0;
     background-color: #2c4561;
