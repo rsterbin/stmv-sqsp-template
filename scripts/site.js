@@ -170,6 +170,9 @@ $(document).ready(function () {
     $('#homeAngelus a.summary-read-more-link')
         .text('Read More')
         .wrap('<div class="read-more"></div>');
+    $('#home-angelus a.sqs-block-button-element').addClass('button');
+
+    // Liturgical calendar week block
     LC.initWeekly();
 
     // MTA icon macro
