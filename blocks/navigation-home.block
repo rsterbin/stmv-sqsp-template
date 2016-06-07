@@ -6,15 +6,15 @@
       {.section collection}
     <div class="row column home-big-link">
         <a href="{fullUrl|htmlattr}">
-            <div class="small-5 columns text">
+            <div class="small-6 columns text" data-equalizer-watch="big-links">
                 <h3>{navigationTitle|htmltag}</h3>
                 {.if description}
                 <div class="tagline">{description}</div>
                 {.end}
             </div>
-            <div class="small-7 columns image">
+            <div class="small-6 columns image">
                 {.if mainImage}
-                <img src="{mainImage.assetUrl|htmlattr}" />
+                <div class="cover" data-equalizer-watch="big-links" style="background-image: url({mainImage.assetUrl|htmlattr})"></div>
                 {.end}
             </div>
         </a>
@@ -23,10 +23,10 @@
       {.section externalLink}
     <div class="row home-big-link external-link">
         <a href="{url|htmlattr}">
-            <div class="small-5 columns text">
+            <div class="small-6 columns text" data-equalizer-watch="big-links">
                 <h3>{title|htmltag}</h3>
             </div>
-            <div class="small-7 columns image"></div>
+            <div class="small-6 columns image"></div>
         </a>
     </div>
       {.end}

@@ -7,41 +7,47 @@
     </div>
 
     <div class="row" id="home-bottom">
-        <div class="small-12 medium-6 large-7 columns" id="home-services">
-            <div class="wrap">
-                <div class="title">
+        <div class="small-12 medium-6 large-7 columns" id="home-left">
+            <div id="home-services">
+                <div class="services-title">
                     <h2>Worship Schedule</h2>
                 </div>
-                <div class="inner liturgical-layout-full">
+                <div class="services-body liturgical-layout-full">
                     <squarespace:block-field id="homeServices" columns="12" />
                 </div>
             </div>
-            <squarespace:block-field id="homeServicesTagline" columns="12" />
         </div>
 
-        <div class="small-12 medium-6 large-5 columns" id="home-sidebar">
-            <div class="row column" id="home-angelus">
-                <div class="wrap">
-                    <div class="title">
-                        <h2>The Angelus</h2>
-                        <p class="tagline">The Weekly Newsletter of Saint Mary's</p>
-                    </div>
-                    <div class="inner">
-                        <squarespace:block-field id="homeAngelus" columns="12" />
-                    </div>
+        <div class="small-12 medium-6 large-5 columns" id="home-right">
+            <div id="home-angelus">
+                <div class="angelus-title">
+                    <h2>The Angelus</h2>
+                </div>
+                <div class="angelus-body">
+                    <squarespace:block-field id="homeAngelus" columns="12" />
                 </div>
             </div>
 
-            <div class="row" id="home-big-links">
+            <div class="row" id="home-big-links" data-equalizer="big-links" data-equalize-on="small">
                 <div class="small-12 columns">
                     <squarespace:navigation navigationId="homeNav" template="navigation-home" />
-                    <div class="row focus">
-                        <div class="small-10 columns">
-                            <squarespace:block-field id="homeFocus" columns="12" />
-                        </div>
-                    </div>
                 </div>
             </div>
+
+            <div class="row focus">
+                <div class="small-10 columns">
+                </div>
+            </div>
+
+            <div class="row column focus">
+                <div class="small-12 columns">
+                    <squarespace:block-field id="homeFocus" columns="12" />
+                </div>
+                <div class="small-12 columns image">
+                    <img src="/assets/cross-icon.png" />
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
