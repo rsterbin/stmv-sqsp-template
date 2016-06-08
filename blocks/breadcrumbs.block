@@ -2,14 +2,18 @@
 <ul class="breadcrumbs hide-for-medium">
     <li><a href="/">Home</a></li>
   {.repeated section @}
-    {.if active}
-      {.folder?}
+    {.folder?}
+      {.if folderActive}
     <li><a href="{collection.fullUrl|htmlattr}">{collection.navigationTitle|htmltag}</a></li>
-      {.or}
-        {.section collection}
-    <li><a href="{collection.fullUrl|htmlattr}">{collection.navigationTitle|htmltag}</a></li>
+      {.end}
+    {.or}
+      {.section collection}
+        {.if active}
+    <li><a href="{fullUrl|htmlattr}">{navigationTitle|htmltag}</a></li>
         {.end}
-        {.section externalLink}
+      {.end}
+      {.section externalLink}
+        {.if active}
     <li><a href="{url|htmlattr}"{.section newWindow} target="_blank"{.end}>{title|htmltag}</a></li>
         {.end}
       {.end}
