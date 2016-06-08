@@ -1,4 +1,4 @@
-<div class="row light-interior" id="main">
+<div class="row column light-interior" id="main">
     <div class="small-12 large-10 large-centered columns">
         <div data-content-field="main-content">
             {squarespace.main-content}
