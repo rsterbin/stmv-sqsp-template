@@ -37,8 +37,9 @@
                                 <h2 data-content-field="site-tag-line">{website.siteTagLine}</h2>
                             </div>
 
-                            <div class="small-12 columns menu-centered show-for-medium" id="nav">
+                            <div class="small-12 columns menu-centered" id="nav">
                                 <squarespace:navigation navigationId="mainNav" template="navigation" />
+                                <squarespace:navigation navigationId="mainNav" template="breadcrumbs" />
                             </div>
                         </div>
 

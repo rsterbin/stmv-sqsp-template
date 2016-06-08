@@ -1,5 +1,5 @@
 {.section items}
-<ul class="menu vertical medium-horizontal dropdown" data-dropdown-menu>
+<ul class="menu vertical medium-horizontal dropdown show-for-medium" data-dropdown-menu>
   {.repeated section @}
     {.folder?}
     <li class="folder {.if folderActive} active{.end}">

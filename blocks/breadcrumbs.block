@@ -1,0 +1,21 @@
+{.section items}
+<ul class="breadcrumbs hide-for-medium">
+    <li><a href="/">Home</a></li>
+  {.repeated section @}
+    {.if active}
+      {.folder?}
+    <li><a href="{collection.fullUrl|htmlattr}">{collection.navigationTitle|htmltag}</a></li>
+      {.or}
+        {.section collection}
+    <li><a href="{collection.fullUrl|htmlattr}">{collection.navigationTitle|htmltag}</a></li>
+        {.end}
+        {.section externalLink}
+    <li><a href="{url|htmlattr}"{.section newWindow} target="_blank"{.end}>{title|htmltag}</a></li>
+        {.end}
+      {.end}
+    {.end}
+  {.end}
+    <li><span class="show-for-sr">Current: </span>This Page</li>
+</ul>
+{.end}
+
