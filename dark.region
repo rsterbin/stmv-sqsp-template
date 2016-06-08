@@ -1,5 +1,8 @@
 <div class="row column dark-interior" id="main">
     <div class="small-12 large-10 large-centered columns">
+            {.section collection}{.equal? typeName "events"}
+            <h1 class="page-title">{title}</h1>
+            {.end}{.end}
         {squarespace.main-content}
     </div>
 </div>
