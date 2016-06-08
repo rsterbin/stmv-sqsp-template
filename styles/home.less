@@ -35,56 +35,23 @@
 
 #home-bottom #home-services .services-title,
 #home-bottom #home-angelus .angelus-title {
-    position: relative;
-    overflow: hidden;
-    height: 8em;
-    padding: 4.5em 1em 1em 1em;
-    z-index: 5;
+    padding: 0.5em 1em;
 }
 
-#home-bottom #home-services .services-title:before,
-#home-bottom #home-angelus .angelus-title:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.6;
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
+#home-bottom #home-services .services-title {
+    background-color: #2e486d;
 }
 
-#home-bottom #home-services .services-title:before {
-    background-image: url(/assets/schedule-banner.jpg);
-}
-
-#home-bottom #home-services .services-title:before {
-    background-position: 50% 0;
-}
-
-#home-bottom #home-angelus .angelus-title:before {
-    background-image: url(/assets/angelus-banner.jpg);
-}
-
-#home-bottom #home-angelus .angelus-title:before {
-    background-position: 50% 0;
+#home-bottom #home-angelus .angelus-title {
+    background-color: #434037;
 }
 
 #home-bottom #home-services .services-title h2,
 #home-bottom #home-angelus .angelus-title h2 {
-    text-transform: none;
+    text-transform: uppercase;
     color: white;
     text-align: left;
-    font-style: italic;
-    text-shadow: 0.125em 0.125em 0.25em #000;
+    text-shadow: none;
     padding: 0;
     margin: 0;
 }
