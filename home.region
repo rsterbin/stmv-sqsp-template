@@ -1,44 +1,46 @@
 <div class="column row collapse" id="main">
 
-    <div class="row" id="home-top">
-        <div class="small-12 columns">
-            <squarespace:block-field id="homeSlideshow" columns="12" />
-        </div>
-    </div>
+    <div class="row" id="home">
 
-    <div class="row" id="home-bottom">
-        <div class="small-12 medium-6 large-7 columns" id="home-left">
+        <!-- Begin left side -->
+        <div class="small-12 medium-6 columns" id="home-left">
+
+            <!-- Worship Services -->
             <div id="home-services">
-                <div class="services-title">
-                    <h2>Worship Schedule</h2>
-                </div>
                 <div class="services-body liturgical-layout-full">
                     <squarespace:block-field id="homeServices" columns="12" />
                 </div>
             </div>
-        </div>
 
-        <div class="small-12 medium-6 large-5 columns" id="home-right">
-            <div id="home-angelus">
-                <div class="angelus-title">
-                    <h2>The Angelus</h2>
-                </div>
-                <div class="angelus-body">
-                    <squarespace:block-field id="homeAngelus" columns="12" />
-                </div>
-            </div>
-
+            <!-- Big links -->
             <div class="row" id="home-big-links" data-equalizer="big-links" data-equalize-on="small">
                 <div class="small-12 columns">
                     <squarespace:navigation navigationId="homeNav" template="navigation-home" />
                 </div>
             </div>
 
-            <div class="row focus">
-                <div class="small-10 columns">
+        </div>
+        <!-- end left side -->
+
+        <!-- begin right side -->
+        <div class="small-12 medium-6 columns" id="home-right">
+
+            <!-- Slideshow -->
+            <div class="row column" id="home-slideshow">
+                <squarespace:block-field id="homeSlideshow" columns="12" />
+            </div>
+
+            <!-- The Angelus -->
+            <div id="home-angelus">
+                <div class="angelus-title">
+                    <h2>The Angelus, Our Newsletter</h2>
+                </div>
+                <div class="angelus-body">
+                    <squarespace:block-field id="homeAngelus" columns="12" />
                 </div>
             </div>
 
+            <!-- Focus block -->
             <div class="row column focus">
                 <div class="small-12 columns">
                     <squarespace:block-field id="homeFocus" columns="12" />
@@ -49,6 +51,8 @@
             </div>
 
         </div>
+        <!-- end right side -->
+
     </div>
 </div>
 
