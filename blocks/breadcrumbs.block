@@ -1,8 +1,8 @@
-{.section items}
 <ul class="breadcrumbs hide-for-medium">
-  {.if collection.homepage}
+{.if collection.homepage}
     <li><span class="show-for-sr">Current: </span>Home</li>
-  {.or}
+{.or}
+{.section items}
     <li><a href="/">Home</a></li>
     {.repeated section @}
       {.folder?}
@@ -35,6 +35,6 @@
       {.end}
     {.end}
   {.end}
-</ul>
 {.end}
+</ul>
 
