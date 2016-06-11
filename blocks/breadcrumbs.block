@@ -1,32 +1,36 @@
 {.section items}
 <ul class="breadcrumbs hide-for-medium">
+  {.if collection.homepage}
+    <li><span class="show-for-sr">Current: </span>Home</li>
+  {.or}
     <li><a href="/">Home</a></li>
-  {.repeated section @}
-    {.folder?}
-      {.if folderActive}
+    {.repeated section @}
+      {.folder?}
+        {.if folderActive}
     <li><a href="{collection.fullUrl|htmlattr}">{collection.navigationTitle|htmltag}</a></li>
-        {.repeated section items}
-          {.collection?}
-            {.section active}
+          {.repeated section items}
+            {.collection?}
+              {.section active}
     <li><span class="show-for-sr">Current: </span>{collection.navigationTitle|htmltag}</li>
+              {.end}
             {.end}
-          {.end}
-          {.section externalLink}
-            {.section active}
+            {.section externalLink}
+              {.section active}
     <li><span class="show-for-sr">Current: </span>{title|htmltag}</li>
+              {.end}
             {.end}
           {.end}
         {.end}
-      {.end}
-    {.or}
-      {.section collection}
-        {.if active}
+      {.or}
+        {.section collection}
+          {.if active}
     <li><span class="show-for-sr">Current: </span>{navigationTitle|htmltag}</li>
+          {.end}
         {.end}
-      {.end}
-      {.section externalLink}
-        {.if active}
+        {.section externalLink}
+          {.if active}
     <li><span class="show-for-sr">Current: </span>{title|htmltag}</li>
+          {.end}
         {.end}
       {.end}
     {.end}

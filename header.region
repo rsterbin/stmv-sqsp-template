@@ -39,10 +39,7 @@
 
                             <div class="small-12 columns menu-centered" id="nav">
                                 <squarespace:navigation navigationId="mainNav" template="navigation" />
-                              {.if collection.homepage}
-                              {.or}
                                 <squarespace:navigation navigationId="mainNav" template="breadcrumbs" />
-                              {.end}
                             </div>
                         </div>
 
