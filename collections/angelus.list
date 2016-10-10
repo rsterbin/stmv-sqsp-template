@@ -36,9 +36,11 @@
       <a class="link" href="{fullUrl}">Read More <i class="fa fa-arrow-circle-o-right"></i></a>
     {.or}
       {body}
-      <!-- {if .systemDataId}
+      <!--
+      {if .systemDataId}
         <img {@|image-meta} />
-      {.end} -->
+      {.end}
+      -->
     {.end}
     </div>
   </div>
