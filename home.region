@@ -3,7 +3,7 @@
     <div class="row" id="home">
 
         <!-- Begin left side -->
-        <div class="small-12 medium-6 columns" id="home-left">
+        <div class="small-12 medium-5 columns" id="home-left">
 
             <!-- Worship Services -->
             <div id="home-services">
@@ -23,7 +23,7 @@
         <!-- end left side -->
 
         <!-- begin right side -->
-        <div class="small-12 medium-6 columns" id="home-right">
+        <div class="small-12 medium-7 columns" id="home-right">
 
             <!-- Slideshow -->
             <div class="row column" id="home-slideshow">
