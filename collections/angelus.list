@@ -37,7 +37,7 @@
     {.or}
       {body}
       <!--
-      {if .systemDataId}
+      {.if .systemDataId}
         <img {@|image-meta} />
       {.end}
       -->
