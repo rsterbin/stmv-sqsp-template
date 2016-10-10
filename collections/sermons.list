@@ -28,17 +28,21 @@
 
 <!--PAGINATION-->
 {.if pagination}
-  <nav class="pagination">
-    {.if pagination.prevPage}
-      <span class="prev"><a href="{pagination.prevPageUrl}" class="older">&larr;</a></span>
-    {.or}
-      <span class="disabled prev">&larr;</span>
-    {.end}
-    {.if pagination.nextPage}
-      <span class="next"><a href="{pagination.nextPageUrl}" class="newer">&rarr;</a></span>
-    {.or}
-      <span class="disabled next">&rarr;</span>
-    {.end}
-  </nav>
+  <div class="row angelus-pagination">
+      <div class="small-6 columns prev">
+          {.if pagination.prevPage}
+          <a href="{pagination.prevPageUrl}"><i class="fa fa-chevron-left"></i> Previous Page</a>
+          {.or}
+          <span class="empty"><i class="fa fa-chevron-left"></i></span>
+          {.end}
+      </div>
+      <div class="small-6 columns next">
+          {.if pagination.nextPage}
+          <a href="{pagination.nextPageUrl}">Next Page <i class="fa fa-chevron-right"></i></a>
+          {.or}
+          <span class="empty"><i class="fa fa-chevron-right"></i></span>
+          {.end}
+      </div>
+  </div>
 {.end}
 
