@@ -36,7 +36,7 @@
       <a class="link" href="{fullUrl}">Read More <i class="fa fa-arrow-circle-o-right"></i></a>
     {.or}
       {body}
-      <!-- {.main-image?}
+      <!-- {.systemDataId}
         <img {@|image-meta} />
       {.end} -->
     {.end}
