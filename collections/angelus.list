@@ -36,13 +36,13 @@
       <a class="link" href="{fullUrl}">Read More <i class="fa fa-arrow-circle-o-right"></i></a>
     {.or}
       {body}
-      <!--
-        {.main-image?}
-          <img {@|image-meta} />
-        {.end}
-        <img {@|image-meta} />
-      -->
     {.end}
+    <!--
+      {.main-image?}
+        <img {@|image-meta} />
+      {.end}
+      <img {@|image-meta} />
+    -->
     </div>
   </div>
   {.end}
