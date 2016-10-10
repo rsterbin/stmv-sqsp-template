@@ -192,5 +192,13 @@ $(document).ready(function () {
         }
     });
 
+    // Email icon macro
+    $('a').each(function () {
+        var $a = $(this);
+        if ($a.text() == 'Email') {
+            $a.html('<i class="fa fa-envelope-o"></i> Email');
+        }
+    });
+
 });
 
