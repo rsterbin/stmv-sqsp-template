@@ -37,9 +37,10 @@
     {.or}
       {body}
       <!--
-      {.if systemDataId}
+        {.main-image?}
+          <img {@|image-meta} />
+        {.end}
         <img {@|image-meta} />
-      {.end}
       -->
     {.end}
     </div>
