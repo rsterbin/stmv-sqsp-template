@@ -31,18 +31,23 @@
         {.end}
     </h5>
     <div class="angelus-body">
-    {.if excerpt}
-      {excerpt}
-      <a class="link" href="{fullUrl}">Read More <i class="fa fa-arrow-circle-o-right"></i></a>
-    {.or}
-      {body}
-    {.end}
-    <!--
       {.main-image?}
-        <img {@|image-meta} />
+      <div class="row">
+        <div class="small-12 medium-3 columns">
+          <img {@|image-meta} />
+        </div>
+        <div class="small-12 medium-9 columns">
       {.end}
-      <img {@|image-meta} />
-    -->
+      {.if excerpt}
+        {excerpt}
+        <a class="link" href="{fullUrl}">Read More <i class="fa fa-arrow-circle-o-right"></i></a>
+      {.or}
+        {body}
+      {.end}
+      {.main-image?}
+        </div>
+      </div>
+      {.end}
     </div>
   </div>
   {.end}
