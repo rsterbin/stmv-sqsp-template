@@ -26,10 +26,12 @@
 
     {postItemInjectCode}    
 
+<!--
     <div class="row column liturgical-calendar-week" rel="{addedOn|date %Y-%m-%d}">
         <h2 class="week-title"></h2>
         <div class="week-services"></div>
     </div>
+-->
 
     <div class="row column comment-share-like">
         {.passthrough?}{.or}{.section sourceUrl}<a href="{sourceUrl}" class="source" target="_blank" title="Source">Source</a>{.end}{.end}

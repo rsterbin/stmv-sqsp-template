@@ -153,7 +153,7 @@ var LC = {
     },
 
     initWeekly: function () {
-        var $block = $('.liturgical-calendar-week'),
+        var $block = $('.liturgical-calendar-week').not('.manual'),
             $services = $block.find('.week-services');
         if ($block.length > 0 && $services.length > 0 && $services.html().length < 1) {
             this.fetchWeekly($block);
