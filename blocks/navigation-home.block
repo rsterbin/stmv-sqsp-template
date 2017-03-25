@@ -21,6 +21,7 @@
     </div>
       {.end}
       {.section externalLink}
+    <!-- {@|json-pretty} -->
     <div class="row column home-big-link home-external-link" id="open-doors">
         <a href="{url|htmlattr}">
             <div class="small-6 columns text" data-equalizer-watch="big-links">
