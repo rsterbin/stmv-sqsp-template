@@ -21,12 +21,14 @@
     </div>
       {.end}
       {.section externalLink}
-    <div class="row home-big-link external-link">
+    <div class="row column home-big-link home-external-link" id="open-doors">
         <a href="{url|htmlattr}">
             <div class="small-6 columns text" data-equalizer-watch="big-links">
                 <h3>{title|htmltag}</h3>
             </div>
-            <div class="small-6 columns image"></div>
+            <div class="small-6 columns image">
+                <div class="cover" data-equalizer-watch="big-links"></div>
+            </div>
         </a>
     </div>
       {.end}

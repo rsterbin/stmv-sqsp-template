@@ -200,5 +200,8 @@ $(document).ready(function () {
         }
     });
 
+    // Open Doors workaround
+    $('#home-big-links #open-doors').find('.text').append('<div class="tagline"><p>The Campaign for the Church of Saint Mary the Virgin</p></div>');
+
 });
 
