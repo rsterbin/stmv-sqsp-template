@@ -1,12 +1,11 @@
 {.section items}
   {.repeated section @}
-    <!-- {@|json-pretty} -->
     {.folder?}
     <!-- ignoring folder {collection.navigationTitle|htmltag} -->
     {.or}
       {.section collection}
     <div class="row column home-big-link">
-        <a href="{fullUrl|htmlattr}"{.if newWindow} target="_blank"{.end}>
+        <a href="{fullUrl|htmlattr}">
             <div class="small-6 columns text" data-equalizer-watch="big-links">
                 <h3>{navigationTitle|htmltag}</h3>
                 {.if description}
