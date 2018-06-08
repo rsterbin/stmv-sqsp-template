@@ -172,6 +172,19 @@ $(document).ready(function () {
         .wrap('<div class="read-more"></div>');
     $('#home-angelus a.sqs-block-button-element').addClass('button');
 
+    // Add Facebook and Instagram to the Angelus summary image
+    if ($('.summary-thumbnail-outer-container')) {
+        $('.summary-thumbnail-outer-container').append('<div class="social-icons">' +
+            '<p>' +
+                '<span class="social-icons-follow">Follow Us</span> ' +
+                '<a href="#" class="facebook-icon-link"><i class="fa fa-facebook-f"></i></a> ' +
+                '<a href="#" class="instagram-icon-link"><i class="fa fa-instagram"></i></a>' +
+            '</p>' +
+        '</div>');
+        $('.summary-thumbnail-outer-container .facebook-icon-link').attr('href', $('#bottom-footer .fa-facebook-f').closest('a').attr('href'));
+        $('.summary-thumbnail-outer-container .instagram-icon-link').attr('href', $('#bottom-footer .fa-instagram').closest('a').attr('href'));
+    }
+
     // Liturgical calendar week block
     LC.initWeekly();
 
