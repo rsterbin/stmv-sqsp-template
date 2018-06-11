@@ -181,8 +181,14 @@ $(document).ready(function () {
                 '<a href="#" class="instagram-icon-link"><i class="fa fa-instagram"></i></a>' +
             '</p>' +
         '</div>');
-        $('.summary-thumbnail-outer-container .facebook-icon-link').attr('href', $('#bottom-footer .fa-facebook-f').closest('a').attr('href'));
-        $('.summary-thumbnail-outer-container .instagram-icon-link').attr('href', $('#bottom-footer .fa-instagram').closest('a').attr('href'));
+        var $fb = $('#bottom-footer .fa-facebook-f').closest('a'),
+            $ig = $('#bottom-footer .fa-instagram').closest('a');
+        console.log($fb);
+        console.log($fb.attr('href'));
+        console.log($ig);
+        console.log($ig.attr('href'));
+        $('.summary-thumbnail-outer-container .facebook-icon-link').attr('href', $fb.attr('href'));
+        $('.summary-thumbnail-outer-container .instagram-icon-link').attr('href', $ig.attr('href'));
     }
 
     // Liturgical calendar week block
