@@ -1,4 +1,4 @@
-<h1>Sermons</h1>
+<h1>{collection.title}</h1>
 
 <!--ITEM LOOP-->
 <div class="sermons-post-list">

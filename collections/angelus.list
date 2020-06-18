@@ -1,4 +1,4 @@
-<h1>The Angelus</h1>
+<h1>{collection.title}</h1>
 
 <!-- CATEGORY FILTER RESULTS e.g., http://base-template.squarespace.com/blog/?category=category1 -->
 {.section categoryFilter}
