@@ -166,6 +166,18 @@ var LC = {
 // }}}
 
 $(document).ready(function () {
+
+    // Tag the donate button
+    const $horizMenuLast = $("#header #nav ul.menu li:last")
+    if ($horizMenuLast.text() == 'Donate') {
+        $horizMenuLast.addClass("donate-button");
+    }
+    const $vertMenuLast = $("#off_canvas_left ul.menu li:last")
+    if ($vertMenuLast.text() == 'Donate') {
+        $vertMenuLast.addClass("donate-button");
+    }
+
+
     // Trick the homepage Angelus summary into showing a real read-more link
     $('#homeAngelus a.summary-read-more-link')
         .text('Read More')
