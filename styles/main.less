@@ -394,3 +394,82 @@ body .sqs-layout-insert-block-menu .sqs-blockicon .label {
     max-height: inherit;
 }
 
+/* Giving box for the donate page */
+#main #giving-box {
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 1rem;
+    background: #444c5b;
+    color: white;
+    font-size: 0.85rem;
+    width: 50%;
+    float: right;
+}
+
+#main #giving-box a:link,
+#main #giving-box a:visited {
+    color: #fce5c0;
+}
+
+#main #giving-box a:focus,
+#main #giving-box a:hover,
+#main #giving-box a:active {
+    color: #fff;
+}
+
+#main #giving-box .button {
+    background-color: #f3ecc9;
+    color: #121e2c;
+    font-weight: bold;
+}
+
+#main #giving-box .button:hover {
+    color: #121e2c;
+}
+
+#main #giving-box-frame {
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    width: 50%;
+    float: right;
+}
+
+body.dark-interior #main #giving-box {
+    background: #f3ecc9;
+    color: #090a0c;
+}
+
+body.darkrinterior #main #giving-box :link,
+body.dark-interior #main #giving-box :visited,
+body.dark-interior #main #giving-box :focus,
+body.dark-interior #main #giving-box :hover,
+body.dark-interior #main #giving-box :active {
+    color: #ffdb91;
+}
+
+body.dark-interior #main #giving-box .button {
+    color: #f6dda9;
+    border-color: #484647;
+    background-color: #121e2c;
+}
+
+body.dark-interior #main #giving-box .button:hover {
+    color: #ffdb91;
+}
+
+#main #giving-box .instructions .link-collapse,
+#main #giving-box .instructions .link-expand {
+    margin-bottom: 1em;
+    text-align: center;
+    font-style: italic;
+}
+
+#main #giving-box .instructions.collapsed .detail,
+#main #giving-box .instructions.collapsed .link-collapse,
+#main #giving-box .instructions.expanded .link-expand {
+    display: none;
+}
+
+#main #giving-box .instructions.expanded .detail,
+#main #giving-box .instructions.expanded .link-collapse,
+#main #giving-box .instructions.collapsed .link-expand {
+    display: block;
+}

@@ -247,5 +247,18 @@ $(document).ready(function () {
     // Open Doors workaround
     $('#home-big-links #open-doors').find('.text').append('<div class="tagline"><p>The Campaign for the Church of Saint Mary the Virgin</p></div>');
 
+    // Donate button
+	$("#main #giving-box .instructions .link-collapse").click((e) => {
+		e.preventDefault();
+		$("#main #giving-box .instructions").removeClass("expanded");
+		$("#main #giving-box .instructions").addClass("collapsed");
+	});
+	$("#main #giving-box .instructions .link-expand").click((e) => {
+		e.preventDefault();
+		$("#main #giving-box .instructions").removeClass("collapsed");
+		$("#main #giving-box .instructions").addClass("expanded");
+	});
+
+
 });
 
