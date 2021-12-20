@@ -2,6 +2,15 @@
 
     <div class="row" id="home">
 
+        <!-- Home banner alert box -->
+        <div class="small-12">
+            <div id="home-alert" class="inactive">
+                <div class="inner">
+                    <squarespace:block-field id="homeAlert" columns="12" />
+                </div>
+            </div>
+        </div>>
+
         <!-- Begin left side -->
         <div class="small-12 medium-5 columns" id="home-left">
 

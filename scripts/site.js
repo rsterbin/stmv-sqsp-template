@@ -177,6 +177,15 @@ $(document).ready(function () {
         $vertMenuLast.addClass("donate-button");
     }
 
+    // Handle the homepage alert
+    const $homeAlert = $("#home-alert").first();
+    if ($homeAlert.text().trim().length > 0) {
+        $homeAlert.addClass('active');
+        $homeAlert.removeClass('inactive');
+    } else {
+        $homeAlert.addClass('inactive');
+        $homeAlert.removeClass('active');
+    }
 
     // Trick the homepage Angelus summary into showing a real read-more link
     $('#homeAngelus a.summary-read-more-link')
